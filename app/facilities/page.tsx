@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Monitor, Microscope, Library, Trophy, Bus, Fingerprint, Palette } from 'lucide-react';
+import { Monitor, Microscope, Library, Trophy, Bus, Fingerprint, Palette, Activity } from 'lucide-react';
 
 export const metadata = {
   title: 'Facilities | Korutla Public School',
@@ -35,14 +35,20 @@ export default function FacilitiesPage() {
     {
       title: 'Safe Transportation',
       icon: Bus,
-      desc: 'A fleet of well-maintained GPS-enabled buses ensuring safe and comfortable transit for students across the city.',
+      desc: 'Our school provides dedicated, safe, and comfortable bus transportation services for all students across Korutla.',
       image: 'seed/transport/600/400'
     },
     {
       title: 'Auditorium/Multi-Purpose Hall',
       icon: Palette,
-      desc: 'A modern acoustic-treated hall for cultural events, morning assemblies, guest lectures, and student performances.',
+      desc: 'A modern, acoustic-treated hall for assemblies, guest lectures, cultural fests, and student activities.',
       image: 'seed/auditorium/600/400'
+    },
+    {
+      title: 'Co-Curricular Activities',
+      icon: Activity,
+      desc: 'Specialized programs and classes in Karate, Dance, Yoga, and Abacus to build cognitive and physical agility.',
+      image: 'seed/cocurricular/600/400'
     }
   ];
 

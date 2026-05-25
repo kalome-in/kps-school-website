@@ -10,21 +10,30 @@ export default function AcademicsPage() {
   const sections = [
     {
       id: 'preprimary',
-      title: 'Pre-Primary',
-      age: 'Ages 3-5',
+      title: 'Pre-Primary Education',
+      age: 'Nursery - UKG',
       icon: Activity,
       borderColor: 'border-school-yellow',
       iconColor: 'text-school-yellow',
       iconBg: 'bg-school-yellow/5 border-school-yellow/20',
       textColor: 'text-school-yellow',
       image: 'seed/preprimary/1200/800',
-      overview: 'Our Pre-Primary program focuses on play-based learning to foster cognitive, motor, and social skills in a secure and nurturing environment.',
-      highlights: ['Montessori-inspired methods', 'Creative arts & crafts', 'Basic numeracy & literacy', 'Motor skill development'],
-      approach: 'We believe children learn best when they are happy and engaged. Our educators act as facilitators, guiding children through structured play and discovery.'
+      overview: 'Associated with the Pinnacle Curriculum (Pearson Product), our pre-primary program uses a theme-based approach that integrates English, Math, Environmental Science (EVS), Social-Emotional Learning, Music, and physical motor activities.',
+      highlights: ['Pinnacle Pearson Curriculum', 'Activity-based play learning', 'English phonics & storytelling', 'Yoga & motor skill building'],
+      approach: 'We focus on activity-based learning that fosters early communication basics, language skills, learning confidence, and strong conceptual understanding.',
+      extraTitle: 'Theme-Based Approach Areas',
+      extraItems: [
+        { label: 'English Phonics & Sight Words', desc: 'Focuses on early reading, comprehension, storytelling, and active listening.' },
+        { label: 'Foundational Mathematics', desc: 'Introduces counting, shapes, operations, measurement, and number understanding.' },
+        { label: 'EVS (Environmental Studies)', desc: 'Exploration and hands-on experience of our surrounding world.' },
+        { label: 'Social-Emotional Learning', desc: 'Encouraging caring behavior, good habits, and emotional resilience.' },
+        { label: 'Music & Movement', desc: 'Expressive learning through physical movement, rhymes, and action songs.' },
+        { label: 'Creative Learning & PE', desc: 'Visual arts, crafts, kids yoga, and physical motor skill development.' }
+      ]
     },
     {
       id: 'primary',
-      title: 'Primary',
+      title: 'Primary School & LEAD',
       age: 'Classes I - V',
       icon: BookOpen,
       borderColor: 'border-school-orange',
@@ -32,13 +41,20 @@ export default function AcademicsPage() {
       iconBg: 'bg-school-orange/5 border-school-orange/10',
       textColor: 'text-school-orange',
       image: 'seed/primary/1200/800',
-      overview: 'The Primary curriculum is designed to build a strong foundational knowledge in core subjects while encouraging natural curiosity.',
-      highlights: ['Interactive digital learning', 'Language labs', 'Environmental awareness', 'Foundational mathematics & sciences'],
-      approach: 'We transition students from play-based learning to structured academics smoothly. Group projects and interactive learning sessions are integral.'
+      overview: 'Integrated with the LEAD School System, the primary section delivers multi-modal, technology-enabled education to cultivate 21st-century skills. Our students participate in the LEAD Network, LEAD Championship, and Student Led Conferences (SLC). We also introduce Computer Coding Skills (CCS) for digital readiness.',
+      highlights: ['LEAD School Integration', 'Computer Coding Skills (CCS)', 'Student Led Conferences (SLC)', 'LEAD Master Classes & App'],
+      approach: 'We emphasize multimodal learning, communication, collaboration, exposure, and confidence. Our students study with custom learning materials and trained teachers.',
+      extraTitle: 'LEAD System & Coding Advantages',
+      extraItems: [
+        { label: 'LEAD Championship Success', desc: '8 of our students qualified for the National LEAD Championship among 2 lakh participants.' },
+        { label: 'Computer Coding Skills (CCS)', desc: 'Introducing basic coding exposure, technology education, and future-tech readiness.' },
+        { label: 'Student Led Conferences (SLC)', desc: 'Empowering students to present their learning progress directly to parents.' },
+        { label: 'Super Teachers & App', desc: 'Certified teachers using tablet resources, with seamless home learning via the LEAD app.' }
+      ]
     },
     {
       id: 'highschool',
-      title: 'High School',
+      title: 'High School & Foundation',
       age: 'Classes VI - X',
       icon: BrainCircuit,
       borderColor: 'border-school-red',
@@ -46,9 +62,16 @@ export default function AcademicsPage() {
       iconBg: 'bg-school-red/5 border-school-red/10',
       textColor: 'text-school-red',
       image: 'seed/highschool/1200/800',
-      overview: 'Our High School program prepares students for board examinations and higher education through rigorous academics and critical thinking.',
-      highlights: ['Advanced laboratory practicals', 'Career counseling', 'Leadership programs', 'Comprehensive board exam prep'],
-      approach: 'Students are encouraged to analyze, question, and apply their knowledge. We focus on conceptual clarity over rote memorization to ensure long-term success.'
+      overview: 'Alongside state board academics, we host the KPS SPECTROPY IIT-NEET Foundation program ("Filling The Learning Gap") designed to boost competitive exam preparation through planned structures, tab-based practice, and advanced standards.',
+      highlights: ['ICON-IIT Batch (max 35)', 'JEE Main & Advanced standards', 'Tab-based online examinations', 'App-based video solutions'],
+      approach: 'We fill the learning gap with rigorous, structured coaching, periodic weekly/monthly assessments, and digital interactive lectures, preparing students for competitive excellence.',
+      extraTitle: 'Spectropy Foundation Coaching Highlights',
+      extraItems: [
+        { label: 'ICON-IIT Batch', desc: 'Limited batch size of 35 students for focused, competitive guidance and individual attention.' },
+        { label: 'Competitive Standards', desc: 'Exams conducted on JEE Main (NIT Standard) and JEE Advanced (IIT Standard) patterns.' },
+        { label: 'Online Tab Testing', desc: 'Tab-based online examinations simulating real national-level exam environments.' },
+        { label: 'Video Solutions', desc: 'Instant access to step-by-step video explanations for difficult mock test questions.' }
+      ]
     }
   ];
 
@@ -134,6 +157,23 @@ export default function AcademicsPage() {
               </div>
 
             </div>
+
+            {/* Extra details sub-grid for themes/LEAD/IIT */}
+            {section.extraItems && (
+              <div className="mt-16 bg-[#F9FAFB] rounded-2xl p-8 border border-gray-100">
+                <h3 className="font-heading font-bold text-lg text-school-black mb-6 border-b border-gray-200 pb-3">
+                  {section.extraTitle}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {section.extraItems.map((item, idx) => (
+                    <div key={idx} className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm space-y-2">
+                      <h4 className="font-heading font-bold text-sm text-school-black">{item.label}</h4>
+                      <p className="text-xs text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </section>
         ))}
       </div>

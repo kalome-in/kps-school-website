@@ -56,7 +56,7 @@ export default function Home() {
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-school-black leading-tight">A legacy of educational excellence and innovation</h2>
               <p className="text-gray-500 leading-relaxed text-sm md:text-base font-light">
-                At Korutla Public School, we believe in empowering every child to discover their true potential. Our comprehensive curriculum, state-of-the-art facilities, and dedicated faculty create an environment where learning is engaging, practical, and futuristic.
+                At Korutla Public School, managed by Kalam Dreams Educational Society, we believe in empowering every child to discover their true potential. Established in 2016, our comprehensive curriculum, state-of-the-art facilities, and dedicated faculty create an environment where learning is engaging, practical, and futuristic.
               </p>
               <div className="grid grid-cols-2 gap-8 pt-8 border-t border-gray-100">
                 <div>
@@ -74,18 +74,18 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6 pt-12">
                 <div className="bg-[#F9FAFB] p-6 rounded-2xl text-center border border-gray-100 hover:border-school-orange transition-colors">
-                  <div className="text-4xl font-bold text-school-orange font-heading mb-2">1500+</div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-school-gray">Active Students</div>
+                  <div className="text-4xl font-bold text-school-orange font-heading mb-2">2016</div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-school-gray">Established</div>
                 </div>
                 <div className="bg-[#F9FAFB] p-6 rounded-2xl text-center border border-gray-100 hover:border-school-red transition-colors">
-                  <div className="text-4xl font-bold text-school-red font-heading mb-2">25+</div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-school-gray">Years of Excellence</div>
+                  <div className="text-4xl font-bold text-school-red font-heading mb-2">8</div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-school-gray">LEAD Championship Finalists</div>
                 </div>
               </div>
               <div className="space-y-6">
                 <div className="bg-[#F9FAFB] p-6 rounded-2xl text-center border border-gray-100 hover:border-school-yellow transition-colors">
-                  <div className="text-4xl font-bold text-school-yellow font-heading mb-2">120+</div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-school-gray">Expert Faculty</div>
+                  <div className="text-4xl font-bold text-school-yellow font-heading mb-2">35 Max</div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-school-gray">ICON-IIT Class Strength</div>
                 </div>
                 <div className="bg-[#F9FAFB] p-6 rounded-2xl text-center border border-gray-100 hover:border-school-gray transition-colors">
                   <div className="text-4xl font-bold text-school-gray font-heading mb-2">100%</div>
@@ -110,14 +110,15 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Users, title: 'Experienced Faculty', desc: 'Highly qualified educators dedicated to personal attention and student mentoring.', border: 'hover:border-school-orange', bg: 'bg-school-orange/5 text-school-orange border-school-orange/10' },
-              { icon: Monitor, title: 'Smart Learning', desc: 'Digital classrooms equipped with modern interactive panels and learning tools.', border: 'hover:border-school-red', bg: 'bg-school-red/5 text-school-red border-school-red/10' },
-              { icon: BookOpen, title: 'Activity-Based', desc: 'Practical, hands-on learning approaches that make education fun and effective.', border: 'hover:border-school-yellow', bg: 'bg-school-yellow/5 text-school-yellow border-school-yellow/20' },
-              { icon: Library, title: 'Modern Infrastructure', desc: 'State-of-the-art campus designed to facilitate all-around development.', border: 'hover:border-school-gray', bg: 'bg-school-gray/5 text-school-gray border-school-gray/10' },
-              { icon: Trophy, title: 'Student Development', desc: 'Focus on extracurriculars, sports, and life skills for holistic growth.', border: 'hover:border-school-orange', bg: 'bg-school-orange/5 text-school-orange border-school-orange/10' },
-              { icon: Microscope, title: 'Safe Campus', desc: 'Secure environment with CCTV monitoring and safe transportation facilities.', border: 'hover:border-school-red', bg: 'bg-school-red/5 text-school-red border-school-red/10' }
+              { icon: BookOpen, title: '1. Academic Excellence', desc: 'Strong focus on academic results, conceptual understanding, and systematic coaching.', border: 'hover:border-school-orange', bg: 'bg-school-orange/5 text-school-orange border-school-orange/10' },
+              { icon: Trophy, title: '2. Extra-Curriculars', desc: 'Holistic growth through sports, yoga, karate, dance, art & craft, and abacus classes.', border: 'hover:border-school-red', bg: 'bg-school-red/5 text-school-red border-school-red/10' },
+              { icon: Library, title: '3. Finite Curriculum Solutions', desc: 'Integrating high-quality solutions like Pearson Pinnacle, LEAD school system, and IIT Foundation.', border: 'hover:border-school-yellow', bg: 'bg-school-yellow/5 text-school-yellow border-school-yellow/20' },
+              { icon: Users, title: '4. Experienced Faculty', desc: 'Passionate and fully trained teachers skilled in competitive coaching and digital methods.', border: 'hover:border-school-gray', bg: 'bg-school-gray/5 text-school-gray border-school-gray/10' },
+              { icon: GraduationCap, title: '5. Olympiad Achievements', desc: 'Students actively participate and rank in Suchirindia Olympiads and MI Champ exams.', border: 'hover:border-school-orange', bg: 'bg-school-orange/5 text-school-orange border-school-orange/10' },
+              { icon: Monitor, title: '6. Multimodal Learning', desc: 'Digital classrooms enabled with interactive flat panels and digital video lectures.', border: 'hover:border-school-red', bg: 'bg-school-red/5 text-school-red border-school-red/10' },
+              { icon: Microscope, title: '7. All-Round Development', desc: 'Enhancing crucial 21st-century skills: communication, collaboration, creativity, and leadership.', border: 'hover:border-school-yellow', bg: 'bg-school-yellow/5 text-school-yellow border-school-yellow/20' }
             ].map((feature, i) => (
-              <div key={i} className={`bg-white p-8 rounded-2xl border border-gray-100 ${feature.border} transition-all duration-300 hover:shadow-sm`}>
+              <div key={i} className={`bg-white p-8 rounded-2xl border border-gray-100 ${feature.border} transition-all duration-300 hover:shadow-sm ${i === 6 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 border ${feature.bg}`}>
                   <feature.icon className="w-5 h-5" />
                 </div>
@@ -272,6 +273,93 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION 7.5 - CHAMPIONSHIPS & ACHIEVEMENTS */}
+      <section className="py-24 bg-[#F9FAFB] border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 text-school-orange font-semibold tracking-wide uppercase text-xs">
+              <span className="w-6 h-0.5 bg-school-orange"></span> Ranks & Victories
+            </div>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-school-black">Championships & Achievements</h2>
+            <p className="text-gray-400 text-sm md:text-base font-light">Celebrating our students&apos; outstanding performances at national, state, and district levels.</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Card 1 - Sports */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-200/60 shadow-sm flex flex-col justify-between hover:border-school-orange transition-all">
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-xl bg-school-orange/5 border border-school-orange/10 flex items-center justify-center text-school-orange">
+                  <Trophy className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-school-black">Sports Achievements</h3>
+                <ul className="space-y-4 text-xs md:text-sm text-gray-500 font-light">
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-orange shrink-0 mt-2"></span>
+                    <span><strong>National Level Softball (Kerala)</strong>: 2nd Place / Silver Medalists.</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-orange shrink-0 mt-2"></span>
+                    <span><strong>State Level Netball & Softball</strong>: Active representation at Nagarjunasagar, Nirmal, and Nalgonda.</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-orange shrink-0 mt-2"></span>
+                    <span><strong>Kho Kho & Taekwondo</strong>: Gold medals at District levels and cross-country representation in Kamareddy.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Card 2 - Olympiads */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-200/60 shadow-sm flex flex-col justify-between hover:border-school-red transition-all">
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-xl bg-school-red/5 border border-school-red/10 flex items-center justify-center text-school-red">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-school-black">Olympiad Ranks</h3>
+                <ul className="space-y-4 text-xs md:text-sm text-gray-500 font-light">
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-red shrink-0 mt-2"></span>
+                    <span><strong>B. Nagachaitanya (Class V)</strong>: 3rd Rank, All India Math Challenge Exam.</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-red shrink-0 mt-2"></span>
+                    <span><strong>Suthari Shanvitha (Class III)</strong>: State 3rd Rank, 31st Telangana Level Olympiad.</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-red shrink-0 mt-2"></span>
+                    <span><strong>District 1st Ranks</strong>: Arise Vishwak (Class III) & Nemuri Nithyasri (Class IV). Jem Srinidhi (Class V) secured District 2nd Rank.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Card 3 - LEAD & Society Honors */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-200/60 shadow-sm flex flex-col justify-between hover:border-school-yellow transition-all">
+              <div className="space-y-6">
+                <div className="w-12 h-12 rounded-xl bg-school-yellow/5 border border-school-yellow/20 flex items-center justify-center text-school-yellow">
+                  <Users className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-school-black">Institutional Honors</h3>
+                <ul className="space-y-4 text-xs md:text-sm text-gray-500 font-light">
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-yellow shrink-0 mt-2"></span>
+                    <span><strong>National LEAD Championship</strong>: 8 KPS students qualified in the national finals, standing out among 2 lakh participants.</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-yellow shrink-0 mt-2"></span>
+                    <span><strong>Best School Award</strong>: Recognized for educational excellence and sports representation.</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <span className="w-1.5 h-1.5 rounded-full bg-school-yellow shrink-0 mt-2"></span>
+                    <span><strong>LEAD Acharya Award</strong>: Awarded for outstanding pedagogical execution and teacher achievements.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 8 - ADMISSIONS CTA & CONTACT - Redesigned to Premium Dark theme */}
       <section className="bg-school-black relative overflow-hidden py-16 border-t border-white/5">
         <div className="absolute inset-0 bg-dot-pattern opacity-10"></div>
@@ -284,7 +372,7 @@ export default function Home() {
                 <Link href="/admissions" className="bg-school-orange hover:bg-school-yellow text-white hover:text-school-black px-6 py-3.5 rounded-lg font-bold text-sm transition-all shadow-sm">
                   Apply for Admission
                 </Link>
-                <a href="tel:+919876543210" className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-3.5 rounded-lg font-bold text-sm transition-all flex items-center gap-2">
+                <a href="tel:+919848459246" className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-3.5 rounded-lg font-bold text-sm transition-all flex items-center gap-2">
                   <PhoneCall className="w-4 h-4" /> Call Us
                 </a>
               </div>

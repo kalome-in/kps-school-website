@@ -41,13 +41,13 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-school-black leading-tight">A Legacy of Excellence in Education</h2>
               <div className="space-y-4 text-gray-500 text-sm md:text-base leading-relaxed font-light">
                 <p>
-                  Founded with a profound vision to provide world-class education, Korutla Public School has grown to become a beacon of learning, innovation, and character-building in the region.
+                  Established in 2016 by the Kalam Dreams Educational Society, Korutla Public School has rapidly grown to become a beacon of learning, innovation, and character-building in the region.
                 </p>
                 <p>
-                  For over two decades, we have been shaping young minds from their early years through to high school, instilling in them the values of integrity, respect, and a lifelong love for learning. Our alumni are testaments to the robust foundation laid during their time with us.
+                  We are committed to providing world-class education that shapes young minds from nursery through to high school, instilling in them the values of integrity, respect, and a lifelong love for learning.
                 </p>
                 <p>
-                  Today, we continue to embrace modern educational paradigms while staying rooted in our core values, offering a dynamic and holistic curriculum tailored for the 21st century.
+                  Today, we continue to embrace modern educational paradigms, combining traditional values with advanced technologies like interactive smart classrooms and IIT/NEET foundation coaching, offering a dynamic and holistic curriculum tailored for the 21st century.
                 </p>
               </div>
             </div>
@@ -119,24 +119,25 @@ export default function AboutPage() {
               <div className="w-44 h-44 md:w-56 md:h-56 rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-md">
                 <Image 
                   src="https://picsum.photos/seed/principal/400/400" 
-                  alt="Principal" 
+                  alt="Principal Gujjeti Venkatesh" 
                   width={224}
                   height={224}
                   className="object-cover w-full h-full"
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="space-y-1">
-                  <h2 className="text-2xl md:text-3xl font-heading font-bold">Message from the Principal</h2>
-                  <h4 className="text-school-yellow font-semibold tracking-wider text-xs uppercase">Dr. AN Sharma</h4>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold">Message from the Principal & Correspondent</h2>
+                  <h4 className="text-school-yellow font-semibold tracking-wider text-xs uppercase">Gujjeti Venkatesh, M.Sc (Chemistry), B.Ed</h4>
+                  <p className="text-[10px] text-gray-400">Post Graduate in Chemistry, Kakatiya University (2006) | Former Vice Principal, Sri Arunodaya Degree College | Director & Principal</p>
                 </div>
                 <div className="space-y-4 text-gray-300 italic font-light text-sm md:text-base leading-relaxed">
                   <p>
-                    {"\"Welcome to Korutla Public School. Our goal is to nurture not just academic brilliance, but to shape character and instill a lifelong passion for knowledge."} 
+                    {"\"At Korutla Public School, we believe education should go beyond memorization. Our core mission is to foster thinking skills, logical analysis, and hands-on practical experience. We aim to create a creative environment where comparison and contrast learning guide students to understand concepts deeply.\""}
                   </p>
                   <p>
-                    {"We provide a safe, supportive, and stimulating environment where each child is valued and encouraged to reach their highest potential. Together with our dedicated staff and supportive parent community, we are building the leaders of tomorrow.\""}
+                    {"By integrating advanced systems like the LEAD curriculum, smart classroom technology, and KPS Spectropy IIT-NEET coaching, we ensure our students build a solid academic foundation. We strive to nurture independent thinkers, confident communicators, and responsible future leaders who are ready to face the world.\""}
                   </p>
                 </div>
               </div>

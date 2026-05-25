@@ -26,8 +26,8 @@ export function Header() {
       <div className="bg-school-black text-white py-2 px-4 shadow-sm border-b border-white/5">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center text-xs sm:text-sm font-medium">
           <div className="flex gap-4">
-            <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5 text-school-gray" /> +91 98765 43210</span>
-            <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-school-gray" /> info@korutlapublicschool.edu</span>
+            <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5 text-school-gray" /> +91 98484 59246 / 99894 09246</span>
+            <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-school-gray" /> kpskorutla@gmail.com</span>
           </div>
           <div className="hidden sm:block uppercase tracking-widest font-bold text-[10px] sm:text-xs">
             <span className="text-school-yellow">Empower.</span>{" "}

@@ -96,7 +96,7 @@ export default function AdmissionsPage() {
               <PhoneCall className="w-6 h-6 text-school-orange shrink-0" />
               <div>
                 <h4 className="font-bold text-school-black text-sm md:text-base">Need assistance?</h4>
-                <p className="text-xs md:text-sm text-gray-500 mt-0.5">Call our Admissions Desk at <strong className="text-school-black font-semibold">+91 98765 43210</strong></p>
+                <p className="text-xs md:text-sm text-gray-500 mt-0.5">Call our Admissions Desk at <strong className="text-school-black font-semibold">+91 98484 59246 / 99894 09246</strong></p>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function AdmissionsPage() {
                   <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Applying for Grade *</label>
                   <select required name="grade" value={formData.grade} onChange={handleChange} className="w-full px-4 py-3 text-sm rounded-lg border border-gray-200 focus:ring-2 focus:ring-school-orange focus:border-transparent outline-none transition-all bg-white">
                     <option value="" disabled>Select Grade</option>
-                    <option value="Pre-Nursery">Pre-Nursery</option>
+                    <option value="Nursery">Nursery</option>
                     <option value="LKG">LKG</option>
                     <option value="UKG">UKG</option>
                     <option value="Class 1">Class I</option>
@@ -161,6 +161,7 @@ export default function AdmissionsPage() {
                     <option value="Class 7">Class VII</option>
                     <option value="Class 8">Class VIII</option>
                     <option value="Class 9">Class IX</option>
+                    <option value="Class 10">Class X</option>
                   </select>
                 </div>
 

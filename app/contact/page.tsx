@@ -59,9 +59,9 @@ export default function ContactPage() {
                 <div className="space-y-1.5">
                   <h3 className="font-bold font-heading text-base text-school-black">Visit Us</h3>
                   <p className="text-xs md:text-sm text-gray-500 font-light leading-relaxed">
-                    123 Education Boulevard,<br />
-                    Korutla, Telangana 505326<br />
-                    India
+                    Jhansi Road, Near Geetha Bhavan,<br />
+                    Korutla – 505326,<br />
+                    District Jagtial, Telangana
                   </p>
                 </div>
               </div>
@@ -87,8 +87,8 @@ export default function ContactPage() {
                 <div className="space-y-1.5">
                   <h3 className="font-bold font-heading text-base text-school-black">Call Us</h3>
                   <p className="text-xs md:text-sm text-gray-500 font-light leading-relaxed">
-                    Primary: +91 98765 43210<br />
-                    Secondary: +91 98765 09876
+                    Primary: +91 98484 59246<br />
+                    Secondary: +91 99894 09246
                   </p>
                 </div>
               </div>
@@ -100,8 +100,8 @@ export default function ContactPage() {
                 <div className="space-y-1.5">
                   <h3 className="font-bold font-heading text-base text-school-black">Email Us</h3>
                   <p className="text-xs md:text-sm text-gray-500 font-light leading-relaxed">
-                    Admissions: admissions@kps.edu<br />
-                    General: info@kps.edu
+                    General & Admissions:<br />
+                    kpskorutla@gmail.com
                   </p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
               </div>
             </div>
             
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-3.5 rounded-lg font-semibold shadow-sm transition-all w-full justify-center text-sm">
+            <a href="https://wa.me/919848459246" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-3.5 rounded-lg font-semibold shadow-sm transition-all w-full justify-center text-sm">
               <MessageSquare className="w-4 h-4" /> Chat on WhatsApp
             </a>
           </div>

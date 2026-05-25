@@ -22,7 +22,7 @@ export function Footer() {
               <span className="text-school-yellow font-bold">EMPOWER.</span>{" "}
               <span className="text-school-orange font-bold">EDUCATE.</span>{" "}
               <span className="text-school-red font-bold">ELEVATE.</span>{" "}
-              Building a strong foundation for the future leaders of tomorrow.
+              Managed by Kalam Dreams Educational Society. Established in 2016, KPS builds a strong foundation for the leaders of tomorrow.
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
@@ -73,15 +73,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex gap-3 text-sm text-gray-400 items-start">
                 <MapPin className="w-4 h-4 text-school-orange shrink-0 mt-0.5" />
-                <span>123 Education Boulevard,<br />Korutla, Telangana 505326<br />India</span>
+                <span>Jhansi Road, Near Geetha Bhavan,<br />Korutla – 505326,<br />District Jagtial, Telangana</span>
               </li>
               <li className="flex gap-3 text-sm text-gray-400 items-center">
                 <Phone className="w-4 h-4 text-school-orange shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 98484 59246, 99894 09246</span>
               </li>
               <li className="flex gap-3 text-sm text-gray-400 items-center">
                 <Mail className="w-4 h-4 text-school-orange shrink-0" />
-                <span>info@korutlapublicschool.edu</span>
+                <span>kpskorutla@gmail.com</span>
               </li>
             </ul>
           </div>
