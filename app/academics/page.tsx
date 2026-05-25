@@ -159,29 +159,77 @@ export default function AcademicsPage() {
             </div>
 
             {/* Custom Infographics depending on Section */}
+            {/* Custom Infographics depending on Section */}
             {section.id === 'preprimary' && (
               <div className="mt-16 bg-gradient-to-br from-school-yellow/10 via-white to-school-yellow/5 rounded-3xl p-8 border border-school-yellow/20">
                 <h3 className="font-heading font-extrabold text-xl text-school-black mb-8 border-b border-gray-200 pb-3 flex items-center gap-2">
                   <span className="w-3 h-3 rounded-full bg-school-yellow animate-pulse"></span>
-                  Pre-Primary Theme-Based Areas
+                  Pre-Primary Curriculum Distribution Infographic
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[
-                    { label: 'English & Phonics', desc: 'Active phonic sounds, sight words, reading comprehension, and storytelling.', icon: '🗣️' },
-                    { label: 'Mathematics', desc: 'Counting, shape properties, basic math operations, and number lines.', icon: '🔢' },
-                    { label: 'EVS Exploration', desc: 'Hands-on discovery and active experience of our surrounding environment.', icon: '🌱' },
-                    { label: 'Social & Emotional', desc: 'Focusing on good habit cultivation, manners, and sharing emotions.', icon: '❤️' },
-                    { label: 'Music & Movement', desc: 'Rhythms, nursery action songs, and active physical play.', icon: '🎵' },
-                    { label: 'Creative & Physical', desc: 'Kids yoga, painting, visual arts, crafts, and motor skill games.', icon: '🎨' }
-                  ].map((item, idx) => (
-                    <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all flex gap-4 items-start">
-                      <span className="text-3xl bg-school-yellow/10 p-2.5 rounded-xl">{item.icon}</span>
-                      <div className="space-y-1">
-                        <h4 className="font-heading font-bold text-sm text-school-black">{item.label}</h4>
-                        <p className="text-xs text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                  {/* Donut Chart Visual Infographic (Left Column) */}
+                  <div className="lg:col-span-5 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center">
+                    <h4 className="font-heading font-bold text-xs uppercase text-school-black tracking-wider mb-6 text-center">Curriculum Activity Allocation</h4>
+                    <div className="relative w-44 h-44 flex items-center justify-center">
+                      {/* SVG Circle representing ratio rings */}
+                      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                        {/* Outer Ring: Phonics 35% */}
+                        <circle cx="18" cy="18" r="15.915" fill="none" stroke="#FFC107" strokeWidth="3" strokeDasharray="35 65" strokeDashoffset="100" />
+                        {/* Inner 1 Ring: Math 25% */}
+                        <circle cx="18" cy="18" r="13.5" fill="none" stroke="#F57C00" strokeWidth="2.8" strokeDasharray="25 75" strokeDashoffset="65" />
+                        {/* Inner 2 Ring: Arts & PE 20% */}
+                        <circle cx="18" cy="18" r="11" fill="none" stroke="#D32F2F" strokeWidth="2.5" strokeDasharray="20 80" strokeDashoffset="40" />
+                        {/* Inner 3 Ring: EVS 20% */}
+                        <circle cx="18" cy="18" r="8.5" fill="none" stroke="#222222" strokeWidth="2.2" strokeDasharray="20 80" strokeDashoffset="20" />
+                      </svg>
+                      {/* Center Badge */}
+                      <div className="absolute text-center">
+                        <span className="text-2xl font-extrabold text-school-black">Pinnacle</span>
+                        <p className="text-[9px] uppercase font-bold text-school-gray tracking-wider">Curriculum</p>
                       </div>
                     </div>
-                  ))}
+                    
+                    {/* Legend */}
+                    <div className="grid grid-cols-2 gap-4 w-full mt-8 text-xs font-medium">
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-school-yellow shrink-0"></span>
+                        <span className="text-school-black">35% Phonics & ELA</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-school-orange shrink-0"></span>
+                        <span className="text-school-black">25% Mathematics</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-school-red shrink-0"></span>
+                        <span className="text-school-black">20% Creative & PE</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-school-black shrink-0"></span>
+                        <span className="text-school-black">20% Environment</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Themes List (Right Column) */}
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      { label: 'English & Phonics', desc: 'Active phonic sounds, sight words, reading comprehension, and storytelling.', icon: '🗣️' },
+                      { label: 'Mathematics', desc: 'Counting, shape properties, basic math operations, and number lines.', icon: '🔢' },
+                      { label: 'EVS Exploration', desc: 'Hands-on discovery and active experience of our surrounding environment.', icon: '🌱' },
+                      { label: 'Social & Emotional', desc: 'Focusing on good habit cultivation, manners, and sharing emotions.', icon: '❤️' },
+                      { label: 'Music & Movement', desc: 'Rhythms, nursery action songs, and active physical play.', icon: '🎵' },
+                      { label: 'Creative & Physical', desc: 'Kids yoga, painting, visual arts, crafts, and motor skill games.', icon: '🎨' }
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white p-5 rounded-xl border border-gray-100 hover:shadow-sm transition-all flex gap-3.5 items-start">
+                        <span className="text-2xl bg-school-yellow/10 p-2 rounded-xl shrink-0">{item.icon}</span>
+                        <div className="space-y-0.5">
+                          <h4 className="font-heading font-bold text-xs text-school-black">{item.label}</h4>
+                          <p className="text-[11px] text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -190,63 +238,76 @@ export default function AcademicsPage() {
               <div className="mt-16 bg-gradient-to-br from-school-orange/10 via-white to-school-orange/5 rounded-3xl p-8 border border-school-orange/20">
                 <h3 className="font-heading font-extrabold text-xl text-school-black mb-8 border-b border-gray-200 pb-3 flex items-center gap-2">
                   <span className="w-3 h-3 rounded-full bg-school-orange animate-pulse"></span>
-                  LEAD Advantage & Coding Infographic
+                  LEAD Advantage & Curriculum Pipeline Infographic
                 </h3>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                   {/* Left Column: National Championship comparison bar */}
-                  <div className="lg:col-span-7 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-                    <h4 className="font-heading font-bold text-sm text-school-black uppercase tracking-wider">National LEAD Championship Standings</h4>
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[10px] font-bold text-gray-400">
-                        <span>Total Competitors</span>
-                        <span>200,000 Students</span>
-                      </div>
-                      <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-gray-300 w-full"></div>
-                      </div>
+                  <div className="lg:col-span-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between space-y-4">
+                    <div>
+                      <h4 className="font-heading font-bold text-sm text-school-black uppercase tracking-wider mb-2">National LEAD Championship Standings</h4>
+                      <p className="text-xs text-gray-400 font-light leading-relaxed mb-6">Our students compete at high standards among elite national schools.</p>
                     </div>
 
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[10px] font-bold text-school-orange">
-                        <span>Elite Qualifiers</span>
-                        <span>2,000 Finalists</span>
+                    <div className="space-y-4">
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-[10px] font-bold text-gray-400">
+                          <span>Total Competitors</span>
+                          <span>200,000 Students</span>
+                        </div>
+                        <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-gray-300 w-full"></div>
+                        </div>
                       </div>
-                      <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-school-orange w-[15%]"></div>
-                      </div>
-                    </div>
 
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[10px] font-bold text-school-red">
-                        <span>KPS National Finalists</span>
-                        <span className="font-extrabold">8 Students</span>
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-[10px] font-bold text-school-orange">
+                          <span>Elite Qualifiers</span>
+                          <span>2,000 Finalists</span>
+                        </div>
+                        <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-school-orange w-[15%]"></div>
+                        </div>
                       </div>
-                      <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-school-orange to-school-red w-[5%] animate-pulse"></div>
+
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-[10px] font-bold text-school-red">
+                          <span>KPS National Finalists</span>
+                          <span className="font-extrabold">8 Students Qualified</span>
+                        </div>
+                        <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-gradient-to-r from-school-orange to-school-red w-[5%] animate-pulse"></div>
+                        </div>
                       </div>
                     </div>
                     
-                    <p className="text-xs text-gray-400 leading-relaxed font-light pt-2">
+                    <p className="text-xs text-gray-400 leading-relaxed font-light pt-4 border-t border-gray-50">
                       Our interactive primary curriculum prepares students for national competitions, allowing **8 KPS students** to secure ranks in the elite top finals of the country.
                     </p>
                   </div>
 
-                  {/* Right Column: Coding skills and student app chips */}
-                  <div className="lg:col-span-5 grid grid-cols-1 gap-4">
-                    <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center">
-                      <span className="text-3xl bg-school-orange/10 p-2.5 rounded-xl">💻</span>
-                      <div>
-                        <h4 className="font-heading font-bold text-sm text-school-black">Coding Skills (CCS)</h4>
-                        <p className="text-xs text-gray-400 mt-0.5 leading-relaxed font-light">Basic logic, algorithms, and technology orientation.</p>
-                      </div>
-                    </div>
-                    <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center">
-                      <span className="text-3xl bg-school-orange/10 p-2.5 rounded-xl">📱</span>
-                      <div>
-                        <h4 className="font-heading font-bold text-sm text-school-black">LEAD Student App</h4>
-                        <p className="text-xs text-gray-400 mt-0.5 leading-relaxed font-light">Interactive tracking and home activities for seamless learning.</p>
-                      </div>
+                  {/* Right Column: LEAD Multimodal Learning Pipeline (Flow Diagram) */}
+                  <div className="lg:col-span-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <h4 className="font-heading font-bold text-sm text-school-black uppercase tracking-wider mb-6">LEAD Multimodal Learning Cycle</h4>
+                    
+                    <div className="space-y-4 relative">
+                      {[
+                        { step: 'A', title: 'Teacher Led Lecture', desc: 'Trained teachers deliver lessons using digital tablet resources & smartboards.', color: 'border-school-orange bg-school-orange/5 text-school-orange' },
+                        { step: 'B', title: 'Hands-on Activities', desc: 'Students participate in group worksheets and visual learning aids.', color: 'border-school-red bg-school-red/5 text-school-red' },
+                        { step: 'C', title: 'Home Practice (LEAD Student App)', desc: 'Reinforcement exercises, quizzes, and learning analytics at home.', color: 'border-school-yellow bg-school-yellow/5 text-school-yellow' },
+                        { step: 'D', title: 'Student Led Conferences (SLC)', desc: 'Students present their learning directly to parents to gain confidence.', color: 'border-school-black bg-school-black/5 text-school-black' }
+                      ].map((stage, idx) => (
+                        <div key={idx} className="flex gap-4 items-start relative">
+                          {idx < 3 && <span className="absolute left-4 top-8 w-0.5 h-12 bg-gray-100 z-0"></span>}
+                          <div className={`w-8 h-8 rounded-full border flex items-center justify-center font-bold text-xs shrink-0 z-10 relative ${stage.color}`}>
+                            {stage.step}
+                          </div>
+                          <div className="space-y-0.5">
+                            <h5 className="font-bold text-xs text-school-black">{stage.title}</h5>
+                            <p className="text-[11px] text-gray-400 leading-relaxed font-light">{stage.desc}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -257,27 +318,64 @@ export default function AcademicsPage() {
               <div className="mt-16 bg-gradient-to-br from-school-red/10 via-white to-school-red/5 rounded-3xl p-8 border border-school-red/20">
                 <h3 className="font-heading font-extrabold text-xl text-school-black mb-8 border-b border-gray-200 pb-3 flex items-center gap-2">
                   <span className="w-3 h-3 rounded-full bg-school-red animate-pulse"></span>
-                  KPS Spectropy IIT-NEET Pathway
+                  KPS Spectropy IIT-NEET Pathway & Score Impact
                 </h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-                  {[
-                    { step: '01', title: 'ICON-IIT Batch', desc: 'Max 35 selected students per batch for focused, personal coaching.', icon: '🎯' },
-                    { step: '02', title: 'Curriculum & Material', desc: 'Comprehensive foundation-oriented prep content and reference guides.', icon: '📚' },
-                    { step: '03', title: 'Online Tab Testing', desc: 'Weekly/monthly exams conducted on tablets to simulate JEE patterns.', icon: '📱' },
-                    { step: '04', title: 'Video Solutions', desc: 'Instant access to mock test video solutions for clearing learning gaps.', icon: '🎬' }
-                  ].map((item, idx) => (
-                    <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group hover:border-school-red transition-all">
-                      <span className="absolute -right-2 -bottom-2 text-6xl font-extrabold text-gray-100/60 font-heading select-none group-hover:text-school-red/5 transition-colors">{item.step}</span>
-                      <div className="space-y-4 relative z-10">
-                        <span className="text-3xl bg-school-red/5 p-2 rounded-xl inline-block">{item.icon}</span>
-                        <div className="space-y-1">
-                          <h4 className="font-heading font-bold text-sm text-school-black">{item.title}</h4>
-                          <p className="text-xs text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                  {/* Left Column: Numbered Pipeline */}
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      { step: '01', title: 'ICON-IIT Batch', desc: 'Max 35 selected students per batch for focused, personal coaching.', icon: '🎯' },
+                      { step: '02', title: 'Curriculum & Material', desc: 'Comprehensive foundation-oriented prep content and reference guides.', icon: '📚' },
+                      { step: '03', title: 'Online Tab Testing', desc: 'Weekly/monthly exams conducted on tablets to simulate JEE patterns.', icon: '📱' },
+                      { step: '04', title: 'Video Solutions', desc: 'Instant access to mock test video solutions for clearing learning gaps.', icon: '🎬' }
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group hover:border-school-red transition-all flex flex-col justify-between">
+                        <span className="absolute -right-2 -bottom-2 text-6xl font-extrabold text-gray-100/60 font-heading select-none group-hover:text-school-red/5 transition-colors">{item.step}</span>
+                        <div className="space-y-3 relative z-10">
+                          <span className="text-3xl bg-school-red/5 p-2 rounded-xl inline-block">{item.icon}</span>
+                          <div className="space-y-1">
+                            <h4 className="font-heading font-bold text-sm text-school-black">{item.title}</h4>
+                            <p className="text-xs text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Right Column: Learning Gap Impact Metric Infographic */}
+                  <div className="lg:col-span-5 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between space-y-6">
+                    <div>
+                      <h4 className="font-heading font-bold text-sm text-school-black uppercase tracking-wider mb-2">Performance & Learning Gap Index</h4>
+                      <p className="text-xs text-gray-400 font-light leading-relaxed">Comparison of students score gains on JEE/NEET patterns using our method.</p>
+                    </div>
+
+                    <div className="space-y-6">
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs font-bold text-gray-400">
+                          <span>Without IIT Foundation (Traditional)</span>
+                          <span className="text-gray-400">45% Average</span>
+                        </div>
+                        <div className="relative w-full h-4 bg-gray-100 rounded-lg overflow-hidden">
+                          <div className="absolute top-0 left-0 h-full bg-gray-300 rounded-lg w-[45%]"></div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-xs font-bold text-school-red">
+                          <span>KPS Spectropy Foundation Program</span>
+                          <span className="font-extrabold">92% Average</span>
+                        </div>
+                        <div className="relative w-full h-4 bg-gray-100 rounded-lg overflow-hidden">
+                          <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-school-orange to-school-red rounded-lg w-[92%] animate-pulse"></div>
                         </div>
                       </div>
                     </div>
-                  ))}
+
+                    <div className="p-4 rounded-xl bg-school-red/5 border border-school-red/10 text-xs text-school-red font-semibold leading-relaxed">
+                      💡 Spectropy is designed specifically to fill the learning gaps of standard curriculum textbooks, enhancing analytical reasoning by 2x.
+                    </div>
+                  </div>
                 </div>
               </div>
             )}

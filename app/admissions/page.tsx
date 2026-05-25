@@ -53,23 +53,46 @@ export default function AdmissionsPage() {
           {/* Details & Process */}
           <div className="space-y-12">
             <div className="space-y-8">
-              <h2 className="text-2xl font-heading font-bold text-school-black">Admission Process</h2>
-              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+              <h2 className="text-2xl font-heading font-bold text-school-black">Admission Process Infographic</h2>
+              
+              {/* Desktop Horizontal Stepper Infographic */}
+              <div className="hidden md:grid grid-cols-4 gap-4 relative mt-12 mb-12">
+                {/* Visual Connector Line */}
+                <div className="absolute top-6 left-10 right-10 h-0.5 bg-gradient-to-r from-school-yellow via-school-orange to-school-red z-0"></div>
+                
+                {[
+                  { step: 1, title: 'Inquiry', desc: 'Fill the online inquiry form or visit our campus.', color: 'border-school-yellow text-school-yellow' },
+                  { step: 2, title: 'Registration', desc: 'Submit the registration form with necessary documents.', color: 'border-school-orange text-school-orange' },
+                  { step: 3, title: 'Assessment', desc: 'Brief interaction or basic written assessment.', color: 'border-school-red text-school-red' },
+                  { step: 4, title: 'Confirmation', desc: 'Complete fee payment & secure admission.', color: 'border-school-black text-school-black' },
+                ].map((item) => (
+                  <div key={item.step} className="relative z-10 flex flex-col items-center text-center space-y-4 group">
+                    <div className={`w-12 h-12 rounded-full border-2 flex items-center justify-center font-extrabold text-sm shadow-md transition-all duration-300 group-hover:scale-110 bg-white ${item.color}`}>
+                      {item.step}
+                    </div>
+                    <div className="bg-[#F9FAFB] p-5 rounded-2xl border border-gray-100 group-hover:border-school-orange transition-all hover:shadow-sm min-h-[140px] flex flex-col justify-between">
+                      <h4 className="font-heading font-bold text-xs uppercase text-school-black tracking-wide">{item.title}</h4>
+                      <p className="text-[11px] text-gray-400 mt-2 leading-relaxed font-light">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile Vertical Timeline */}
+              <div className="block md:hidden space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-0.5 before:bg-gray-100">
                 {[
                   { step: 1, title: 'Inquiry', desc: 'Fill the online inquiry form or visit the campus to understand our methodology.' },
                   { step: 2, title: 'Registration', desc: 'Procure and submit the admission registration form with necessary documents.' },
                   { step: 3, title: 'Interaction / Assessment', desc: 'A brief interaction session for Pre-Primary, and a basic written assessment for higher grades.' },
                   { step: 4, title: 'Confirmation', desc: 'Fee payment and final confirmation of the admission.' },
                 ].map((item) => (
-                  <div key={item.step} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-lg border border-school-orange/20 bg-school-orange/5 text-school-orange font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm relative z-10 text-xs">
+                  <div key={item.step} className="relative flex items-start gap-4">
+                    <div className="flex items-center justify-center w-9 h-9 rounded-lg border border-school-orange/20 bg-school-orange/5 text-school-orange font-bold shrink-0 shadow-sm relative z-10 text-xs">
                       {item.step}
                     </div>
-                    <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2rem)] bg-[#F9FAFB] p-5 rounded-xl border border-gray-100 group-hover:border-school-orange transition-colors">
-                      <div className="flex items-center justify-between space-x-2 mb-1">
-                        <div className="font-bold text-school-black text-sm md:text-base">{item.title}</div>
-                      </div>
-                      <div className="text-xs md:text-sm text-gray-500 leading-relaxed font-light">{item.desc}</div>
+                    <div className="bg-[#F9FAFB] p-5 rounded-xl border border-gray-100 flex-1">
+                      <div className="font-bold text-school-black text-sm mb-1">{item.title}</div>
+                      <p className="text-xs text-gray-500 leading-relaxed font-light">{item.desc}</p>
                     </div>
                   </div>
                 ))}
