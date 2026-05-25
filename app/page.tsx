@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Users, Trophy, GraduationCap, Microscope, Monitor, Library, Palette, Calendar, MessageSquare, PhoneCall, ChevronRight } from 'lucide-react';
+import { Gallery } from '@/components/gallery';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         
         {/* Background Image showing a campus or students */}
         <Image 
-          src="https://picsum.photos/seed/schoolhero/1920/1080" 
+          src="/images/hero_banner.jpg" 
           alt="Korutla Public School Campus" 
           fill
           priority
@@ -188,14 +189,14 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: 'Pre-Primary', age: 'Ages 3-5', img: 'seed/preprimary/800/600', color: 'border-school-yellow/35', desc: 'A nurturing environment focusing on play-based learning, motor skills, and creative expression.' },
-              { title: 'Primary', age: 'Classes I - V', img: 'seed/primary/800/600', color: 'border-school-orange/35', desc: 'Building strong foundations in core subjects while encouraging curiosity and critical thinking.' },
-              { title: 'High School', age: 'Classes VI - X', img: 'seed/highschool/800/600', color: 'border-school-red/35', desc: 'Rigorous academics, leadership opportunities, and preparation for board examinations.' }
+              { title: 'Pre-Primary', age: 'Ages 3-5', img: '/images/preprimary_learning.jpg', color: 'border-school-yellow/35', desc: 'A nurturing environment focusing on play-based learning, motor skills, and creative expression.' },
+              { title: 'Primary', age: 'Classes I - V', img: '/images/primary_learning.jpg', color: 'border-school-orange/35', desc: 'Building strong foundations in core subjects while encouraging curiosity and critical thinking.' },
+              { title: 'High School', age: 'Classes VI - X', img: '/images/highschool_learning.jpg', color: 'border-school-red/35', desc: 'Rigorous academics, leadership opportunities, and preparation for board examinations.' }
             ].map((program, i) => (
               <div key={i} className="group rounded-2xl overflow-hidden flex flex-col border border-gray-100 shadow-sm hover:shadow-md transition-all bg-white">
                 <div className="relative h-64 overflow-hidden">
                   <Image
-                    src={`https://picsum.photos/${program.img}`}
+                    src={program.img}
                     alt={program.title}
                     fill
                     className="object-cover group-hover:scale-103 transition-transform duration-500"
@@ -256,30 +257,9 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Events */}
-            <div className="space-y-8">
-              <div className="flex justify-between items-center border-b border-gray-100 pb-4">
-                <h2 className="text-2xl font-heading font-bold text-school-black flex items-center gap-2.5">
-                  <Palette className="w-6 h-6 text-school-orange" /> Recent Events
-                </h2>
-                <Link href="/events" className="text-xs font-semibold text-school-gray hover:text-school-orange transition-colors">See All</Link>
-              </div>
-              <div className="space-y-6">
-                {[1, 2].map((i) => (
-                  <div key={i} className="flex gap-6 group cursor-pointer bg-[#F9FAFB] p-4 rounded-xl border border-gray-100 hover:border-school-orange transition-all">
-                    <div className="w-20 h-20 relative rounded-lg overflow-hidden shrink-0">
-                      <Image src={`https://picsum.photos/seed/event${i}/400/400`} alt="Event" fill className="object-cover group-hover:scale-103 transition-transform duration-500" referrerPolicy="no-referrer" />
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <span className="text-[10px] font-bold text-school-orange uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                        <Calendar className="w-3 h-3" /> Oct {14 + i}, 2025
-                      </span>
-                      <h4 className="font-heading font-bold text-school-black text-sm md:text-base group-hover:text-school-orange transition-colors">Annual Science Exhibition</h4>
-                      <p className="text-xs text-gray-400 mt-1 line-clamp-1 font-light">Students showcase their innovative science projects and working models.</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {/* Gallery Column */}
+            <div className="bg-white p-6 md:p-8 rounded-3xl border border-gray-200/60 shadow-sm flex flex-col justify-between">
+              <Gallery />
             </div>
 
             {/* Notices */}

@@ -13,7 +13,7 @@ export default function AboutPage() {
       <section className="relative h-[45vh] min-h-[350px] flex items-center justify-center overflow-hidden bg-school-black">
         <div className="absolute inset-0 bg-dot-pattern opacity-20"></div>
         <Image 
-          src="https://picsum.photos/seed/about/1920/1080" 
+          src="/images/hero_banner.jpg" 
           alt="About KPS" 
           fill
           priority
@@ -163,7 +163,7 @@ export default function AboutPage() {
               <div className="lg:col-span-5 space-y-6 flex flex-col items-center lg:items-start">
                 <div className="w-56 h-56 md:w-64 md:h-64 rounded-3xl overflow-hidden border-2 border-white/20 shadow-xl relative group">
                   <Image 
-                    src="https://picsum.photos/seed/principal/400/400" 
+                    src="/images/principal_portrait.jpg" 
                     alt="Principal Gujjeti Venkatesh" 
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

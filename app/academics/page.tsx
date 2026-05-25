@@ -17,7 +17,7 @@ export default function AcademicsPage() {
       iconColor: 'text-school-yellow',
       iconBg: 'bg-school-yellow/5 border-school-yellow/20',
       textColor: 'text-school-yellow',
-      image: 'seed/preprimary/1200/800',
+      image: '/images/preprimary_learning.jpg',
       overview: 'Associated with the Pinnacle Curriculum (Pearson Product), our pre-primary program uses a theme-based approach that integrates English, Math, Environmental Science (EVS), Social-Emotional Learning, Music, and physical motor activities.',
       highlights: ['Pinnacle Pearson Curriculum', 'Activity-based play learning', 'English phonics & storytelling', 'Yoga & motor skill building'],
       approach: 'We focus on activity-based learning that fosters early communication basics, language skills, learning confidence, and strong conceptual understanding.',
@@ -40,7 +40,7 @@ export default function AcademicsPage() {
       iconColor: 'text-school-orange',
       iconBg: 'bg-school-orange/5 border-school-orange/10',
       textColor: 'text-school-orange',
-      image: 'seed/primary/1200/800',
+      image: '/images/primary_learning.jpg',
       overview: 'Integrated with the LEAD School System, the primary section delivers multi-modal, technology-enabled education to cultivate 21st-century skills. Our students participate in the LEAD Network, LEAD Championship, and Student Led Conferences (SLC). We also introduce Computer Coding Skills (CCS) for digital readiness.',
       highlights: ['LEAD School Integration', 'Computer Coding Skills (CCS)', 'Student Led Conferences (SLC)', 'LEAD Master Classes & App'],
       approach: 'We emphasize multimodal learning, communication, collaboration, exposure, and confidence. Our students study with custom learning materials and trained teachers.',
@@ -61,7 +61,7 @@ export default function AcademicsPage() {
       iconColor: 'text-school-red',
       iconBg: 'bg-school-red/5 border-school-red/10',
       textColor: 'text-school-red',
-      image: 'seed/highschool/1200/800',
+      image: '/images/highschool_learning.jpg',
       overview: 'Alongside state board academics, we host the KPS SPECTROPY IIT-NEET Foundation program ("Filling The Learning Gap") designed to boost competitive exam preparation through planned structures, tab-based practice, and advanced standards.',
       highlights: ['ICON-IIT Batch (max 35)', 'JEE Main & Advanced standards', 'Tab-based online examinations', 'App-based video solutions'],
       approach: 'We fill the learning gap with rigorous, structured coaching, periodic weekly/monthly assessments, and digital interactive lectures, preparing students for competitive excellence.',
@@ -81,7 +81,7 @@ export default function AcademicsPage() {
       <section className="relative h-[45vh] min-h-[350px] flex items-center justify-center overflow-hidden bg-school-black">
         <div className="absolute inset-0 bg-dot-pattern opacity-20"></div>
         <Image 
-          src="https://picsum.photos/seed/academics/1920/1080" 
+          src="/images/hero_banner.jpg" 
           alt="Academics KPS" 
           fill
           priority
@@ -108,7 +108,7 @@ export default function AcademicsPage() {
               <div className="w-full lg:w-1/2 relative">
                 <div className="relative h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
                   <Image 
-                    src={`https://picsum.photos/${section.image}`} 
+                    src={section.image} 
                     alt={section.title} 
                     fill
                     className="object-cover hover:scale-103 transition-transform duration-700"
