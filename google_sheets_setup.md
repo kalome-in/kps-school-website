@@ -95,9 +95,9 @@ Once configured, the forms will securely submit to your Google Sheets and send e
 
 ---
 
-## 📢 Notice Board Setup (Google Forms & Sheets Integration)
+## 📢 Notice Board Setup (Direct Google Sheets CSV Integration)
 
-The Notice Board can display announcements updated dynamically via a Google Form. Since we want to read data *from* the spreadsheet rather than writing *to* it, the Apps Script setup uses a `doGet(e)` function instead of `doPost(e)`.
+The Notice Board displays announcements updated dynamically via a Google Form / Spreadsheet. The easiest way to configure this is by directly sharing the Google Sheet and pasting its URL.
 
 ### 📅 Step 1: Create your Google Form and Sheet
 1. Create a new Google Form (e.g. named "KPS Notice Board Portal").
@@ -107,91 +107,17 @@ The Notice Board can display announcements updated dynamically via a Google Form
    - **Attachment / PDF Link** (Optional: File upload or Link URL for notice PDFs)
 3. Go to the **Responses** tab of your Google Form, click **Link to Sheets**, and create a new spreadsheet (e.g. named "KPS Notices (Responses)").
 
-### ✍️ Step 2: Set up the doGet Google Apps Script
-1. Open the linked spreadsheet.
-2. Go to **Extensions** $\rightarrow$ **Apps Script**.
-3. Clear the editor and paste the following script:
+### 🔓 Step 2: Share the Google Spreadsheet publicly
+For the website backend to read the notices from the spreadsheet, it must be shared:
+1. Open the spreadsheet in your browser.
+2. Click the blue **Share** button in the top right.
+3. Under **General access**, change it from "Restricted" to **"Anyone with the link can view"** (this is safe; the backend only reads the file and does not modify it).
+4. Copy the URL of your Google Sheet from the browser address bar (it looks like `https://docs.google.com/spreadsheets/d/.../edit#gid=0`).
 
-```javascript
-function doGet(e) {
-  try {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    var rows = sheet.getDataRange().getValues();
-    if (rows.length <= 1) {
-      return ContentService.createTextOutput(JSON.stringify({ status: "success", data: [] }))
-        .setMimeType(ContentService.MimeType.JSON)
-        .setHeader('Access-Control-Allow-Origin', '*');
-    }
-    
-    var headers = rows[0].map(function(h) { return h.toString().trim().toLowerCase(); });
-    var notices = [];
-    
-    for (var i = 1; i < rows.length; i++) {
-      var row = rows[i];
-      var notice = { id: i };
-      
-      for (var j = 0; j < headers.length; j++) {
-        var header = headers[j];
-        var val = row[j];
-        
-        if (header.indexOf('timestamp') !== -1) {
-          notice.timestamp = val;
-        } else if (header.indexOf('title') !== -1 || header.indexOf('announcement') !== -1 || header.indexOf('notice') !== -1) {
-          notice.title = val;
-        } else if (header.indexOf('tag') !== -1 || header.indexOf('category') !== -1) {
-          notice.tag = val;
-        } else if (header.indexOf('link') !== -1 || header.indexOf('file') !== -1 || header.indexOf('pdf') !== -1 || header.indexOf('attachment') !== -1) {
-          notice.fileUrl = val;
-        }
-      }
-      
-      // Post-process date format from Timestamp
-      if (notice.timestamp) {
-        var dateObj = new Date(notice.timestamp);
-        if (!isNaN(dateObj.getTime())) {
-          notice.date = dateObj.toLocaleDateString('en-US', {
-            month: 'short',
-            day: '2-digit',
-            year: 'numeric'
-          });
-        }
-      }
-      if (!notice.date) {
-        notice.date = "Recent";
-      }
-      if (!notice.tag) {
-        notice.tag = "Circular";
-      }
-      
-      if (notice.title) {
-        notices.push(notice);
-      }
-    }
-    
-    // Sort by timestamp descending (newest first)
-    notices.sort(function(a, b) {
-      var dateA = a.timestamp ? new Date(a.timestamp) : new Date(0);
-      var dateB = b.timestamp ? new Date(b.timestamp) : new Date(0);
-      return dateB - dateA;
-    });
-    
-    return ContentService.createTextOutput(JSON.stringify({ status: "success", data: notices }))
-      .setMimeType(ContentService.MimeType.JSON);
-  } catch (error) {
-    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() }))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-}
-```
-
-### 🚀 Step 3: Deploy the Script
-1. Click **Deploy** $\rightarrow$ **New deployment** in the top right.
-2. Select type **Web app**.
-3. Choose **Execute as: Me** and **Who has access: Anyone**.
-4. Deploy and copy the Web App URL.
-
-### ⚙️ Step 4: Configure the Environment Variable
-Paste the copied Web App URL in your local `.env` or `.env.local` file:
+### ⚙️ Step 3: Configure the Environment Variable
+Paste the copied Google Sheet URL in your local `.env` or `.env.local` file:
 ```env
-NOTICES_SHEET_URL="PASTE_YOUR_NOTICES_WEB_APP_URL_HERE"
+NOTICES_SHEET_URL="PASTE_YOUR_PUBLIC_GOOGLE_SHEET_URL_HERE"
 ```
+
+*(Note: The backend API will automatically convert your Google Sheet URL into a direct CSV export endpoint. You don't need to write any Google Apps Script code for the Notice Board!)*
