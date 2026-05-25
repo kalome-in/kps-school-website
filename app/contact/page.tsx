@@ -107,12 +107,18 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="w-full h-64 bg-gray-50 rounded-2xl overflow-hidden relative border border-gray-200/60">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-light text-xs md:text-sm bg-gray-50 flex-col">
-                <MapPin className="w-6 h-6 text-gray-300 mb-2" />
-                Google Maps Integration
-              </div>
+            {/* Google Maps Embed */}
+            <div className="w-full h-64 bg-gray-50 rounded-2xl overflow-hidden relative border border-gray-200/60 shadow-sm">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.3642701077865!2d78.70836876332763!3d18.826464272747984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcd0b24ae43c8d1%3A0x9c502bf94492cc36!2sKorutla%20Public%20School%20E%2FM!5e0!3m2!1sen!2sin!4v1779708958621!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
             </div>
             
             <a href="https://wa.me/919848459246" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-3.5 rounded-lg font-semibold shadow-sm transition-all w-full justify-center text-sm">
