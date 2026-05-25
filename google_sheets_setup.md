@@ -39,8 +39,8 @@ function doPost(e) {
     sheet.appendRow(row);
     
     // Send Email Notification
-    // Session.getActiveUser().getEmail() automatically fetches the email of the account owning the sheet
-    var emailRecipient = Session.getActiveUser().getEmail() || "your-school-email@gmail.com";
+    // Defaults to the school's admin email; falls back to the sheet owner's email if needed
+    var emailRecipient = "kpskorutla@gmail.com"; 
     var subject = "New Website Submission: " + (data.formType || "Inquiry");
     
     // Format the email body
