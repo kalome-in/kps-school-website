@@ -1,0 +1,8 @@
+{
+  "name": "Korutla Public School",
+  "description": "Modern educational website for Korutla Public School featuring parent communication, admissions visibility, academic presentation, and a premium digital platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
