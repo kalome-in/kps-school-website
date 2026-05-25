@@ -75,9 +75,22 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
                   {notice.tag}
                 </span>
               </div>
-              <p className="font-medium text-school-black text-sm leading-relaxed group-hover:text-school-orange transition-colors">
-                {notice.title}
-              </p>
+              {notice.fileUrl ? (
+                <a
+                  href={notice.fileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group-hover:underline"
+                >
+                  <p className="font-medium text-school-black text-sm leading-relaxed group-hover:text-school-orange transition-colors">
+                    {notice.title}
+                  </p>
+                </a>
+              ) : (
+                <p className="font-medium text-school-black text-sm leading-relaxed">
+                  {notice.title}
+                </p>
+              )}
               {notice.fileUrl && (
                 <a
                   href={notice.fileUrl}
@@ -164,9 +177,22 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
                     {notice.tag}
                   </span>
                 </div>
-                <h3 className="font-heading font-semibold text-school-black text-base group-hover:text-school-orange transition-colors duration-200">
-                  {notice.title}
-                </h3>
+                {notice.fileUrl ? (
+                  <a
+                    href={notice.fileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group-hover:underline"
+                  >
+                    <h3 className="font-heading font-semibold text-school-black text-base group-hover:text-school-orange transition-colors duration-200">
+                      {notice.title}
+                    </h3>
+                  </a>
+                ) : (
+                  <h3 className="font-heading font-semibold text-school-black text-base">
+                    {notice.title}
+                  </h3>
+                )}
               </div>
 
               <div className="shrink-0 mt-4 sm:mt-0">
