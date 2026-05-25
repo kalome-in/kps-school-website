@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { BookOpen, BrainCircuit, Activity, ChevronRight } from 'lucide-react';
+import { BookOpen, BrainCircuit, Activity, ChevronRight, MessageSquare, Binary, Sprout, Heart, Music, Palette, Target, Tablet, Play } from 'lucide-react';
 
 export const metadata = {
   title: 'Academics | Korutla Public School',
@@ -214,15 +214,17 @@ export default function AcademicsPage() {
                   {/* Themes List (Right Column) */}
                   <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
-                      { label: 'English & Phonics', desc: 'Active phonic sounds, sight words, reading comprehension, and storytelling.', icon: '🗣️' },
-                      { label: 'Mathematics', desc: 'Counting, shape properties, basic math operations, and number lines.', icon: '🔢' },
-                      { label: 'EVS Exploration', desc: 'Hands-on discovery and active experience of our surrounding environment.', icon: '🌱' },
-                      { label: 'Social & Emotional', desc: 'Focusing on good habit cultivation, manners, and sharing emotions.', icon: '❤️' },
-                      { label: 'Music & Movement', desc: 'Rhythms, nursery action songs, and active physical play.', icon: '🎵' },
-                      { label: 'Creative & Physical', desc: 'Kids yoga, painting, visual arts, crafts, and motor skill games.', icon: '🎨' }
+                      { label: 'English & Phonics', desc: 'Active phonic sounds, sight words, reading comprehension, and storytelling.', icon: MessageSquare, iconColor: 'text-school-yellow' },
+                      { label: 'Mathematics', desc: 'Counting, shape properties, basic math operations, and number lines.', icon: Binary, iconColor: 'text-school-orange' },
+                      { label: 'EVS Exploration', desc: 'Hands-on discovery and active experience of our surrounding environment.', icon: Sprout, iconColor: 'text-emerald-500' },
+                      { label: 'Social & Emotional', desc: 'Focusing on good habit cultivation, manners, and sharing emotions.', icon: Heart, iconColor: 'text-school-red' },
+                      { label: 'Music & Movement', desc: 'Rhythms, nursery action songs, and active physical play.', icon: Music, iconColor: 'text-indigo-500' },
+                      { label: 'Creative & Physical', desc: 'Kids yoga, painting, visual arts, crafts, and motor skill games.', icon: Palette, iconColor: 'text-school-yellow' }
                     ].map((item, idx) => (
                       <div key={idx} className="bg-white p-5 rounded-xl border border-gray-100 hover:shadow-sm transition-all flex gap-3.5 items-start">
-                        <span className="text-2xl bg-school-yellow/10 p-2 rounded-xl shrink-0">{item.icon}</span>
+                        <span className="bg-school-yellow/10 p-2.5 rounded-xl shrink-0 flex items-center justify-center">
+                          <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                        </span>
                         <div className="space-y-0.5">
                           <h4 className="font-heading font-bold text-xs text-school-black">{item.label}</h4>
                           <p className="text-[11px] text-gray-400 font-light leading-relaxed">{item.desc}</p>
@@ -325,15 +327,17 @@ export default function AcademicsPage() {
                   {/* Left Column: Numbered Pipeline */}
                   <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
-                      { step: '01', title: 'ICON-IIT Batch', desc: 'Max 35 selected students per batch for focused, personal coaching.', icon: '🎯' },
-                      { step: '02', title: 'Curriculum & Material', desc: 'Comprehensive foundation-oriented prep content and reference guides.', icon: '📚' },
-                      { step: '03', title: 'Online Tab Testing', desc: 'Weekly/monthly exams conducted on tablets to simulate JEE patterns.', icon: '📱' },
-                      { step: '04', title: 'Video Solutions', desc: 'Instant access to mock test video solutions for clearing learning gaps.', icon: '🎬' }
+                      { step: '01', title: 'ICON-IIT Batch', desc: 'Max 35 selected students per batch for focused, personal coaching.', icon: Target },
+                      { step: '02', title: 'Curriculum & Material', desc: 'Comprehensive foundation-oriented prep content and reference guides.', icon: BookOpen },
+                      { step: '03', title: 'Online Tab Testing', desc: 'Weekly/monthly exams conducted on tablets to simulate JEE patterns.', icon: Tablet },
+                      { step: '04', title: 'Video Solutions', desc: 'Instant access to mock test video solutions for clearing learning gaps.', icon: Play }
                     ].map((item, idx) => (
                       <div key={idx} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group hover:border-school-red transition-all flex flex-col justify-between">
                         <span className="absolute -right-2 -bottom-2 text-6xl font-extrabold text-gray-100/60 font-heading select-none group-hover:text-school-red/5 transition-colors">{item.step}</span>
                         <div className="space-y-3 relative z-10">
-                          <span className="text-3xl bg-school-red/5 p-2 rounded-xl inline-block">{item.icon}</span>
+                          <span className="bg-school-red/5 p-2 rounded-xl inline-block text-school-red flex items-center justify-center">
+                            <item.icon className="w-5 h-5" />
+                          </span>
                           <div className="space-y-1">
                             <h4 className="font-heading font-bold text-sm text-school-black">{item.title}</h4>
                             <p className="text-xs text-gray-400 font-light leading-relaxed">{item.desc}</p>

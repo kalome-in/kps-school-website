@@ -12,7 +12,7 @@ const MENU_ITEMS = [
   { label: 'Facilities', href: '/facilities' },
   { label: 'Admissions', href: '/admissions' },
   { label: 'Notices', href: '/notices' },
-  { label: 'Events', href: '/events' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
 ];

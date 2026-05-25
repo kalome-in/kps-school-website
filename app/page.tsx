@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Users, Trophy, GraduationCap, Microscope, Monitor, Library, Palette, Calendar, MessageSquare, PhoneCall, ChevronRight } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, Trophy, GraduationCap, Microscope, Monitor, Library, Palette, Calendar, MessageSquare, PhoneCall, ChevronRight, Award, Star, Flag, Medal, School } from 'lucide-react';
 import { Gallery } from '@/components/gallery';
 
 export default function Home() {
@@ -326,7 +326,9 @@ export default function Home() {
 
                 <div className="space-y-6 pt-4 border-t border-gray-100">
                   <div className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-orange/10 text-school-orange font-bold text-xs">🥈</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-orange/10 text-school-orange">
+                      <Award className="w-4 h-4" />
+                    </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">National Level Softball</h4>
                       <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">2nd Place (Silver Medal) representing Telangana at Kerala national meet.</p>
@@ -334,7 +336,9 @@ export default function Home() {
                   </div>
 
                   <div className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-orange/10 text-school-orange font-bold text-xs">⭐</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-orange/10 text-school-orange">
+                      <Star className="w-4 h-4" />
+                    </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">State Representative</h4>
                       <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">Major representations in Netball (Nagarjunasagar) and Softball (Nirmal, Nalgonda).</p>
@@ -342,7 +346,9 @@ export default function Home() {
                   </div>
 
                   <div className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-orange/10 text-school-orange font-bold text-xs">🏆</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-orange/10 text-school-orange">
+                      <Trophy className="w-4 h-4" />
+                    </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">District Gold Medals</h4>
                       <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">Kho Kho & Taekwondo district victories, and Cross Country at Kamareddy.</p>
@@ -369,7 +375,9 @@ export default function Home() {
 
                 <div className="space-y-6 pt-4 border-t border-gray-100">
                   <div className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-red/10 text-school-red font-bold text-xs">🇮🇳</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-red/10 text-school-red">
+                      <Flag className="w-4 h-4" />
+                    </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">All India Math Challenge</h4>
                       <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">B. Nagachaitanya (Grade V) secured the **3rd Rank** at the national level.</p>
@@ -377,7 +385,9 @@ export default function Home() {
                   </div>
 
                   <div className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-red/10 text-school-red font-bold text-xs">🎖️</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-red/10 text-school-red">
+                      <Award className="w-4 h-4" />
+                    </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">31st State Level Olympiad</h4>
                       <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">Suthari Shanvitha (Grade III) achieved **State 3rd Rank** in Suchirindia.</p>
@@ -385,7 +395,9 @@ export default function Home() {
                   </div>
 
                   <div className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-red/10 text-school-red font-bold text-xs">🥇</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-red/10 text-school-red">
+                      <Medal className="w-4 h-4" />
+                    </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">District 1st Ranks</h4>
                       <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">Arise Vishwak (Grade III) & Nemuri Nithyasri (Grade IV) - District 1st. Jem Srinidhi (Grade V) - District 2nd.</p>
@@ -426,7 +438,9 @@ export default function Home() {
                   </div>
 
                   <div className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-yellow/10 text-school-yellow font-bold text-xs">🏫</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-yellow/10 text-school-yellow">
+                      <School className="w-4 h-4" />
+                    </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">Best School Award</h4>
                       <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">Awarded for all-round excellence, sports infrastructure, and leadership coaching.</p>
@@ -434,7 +448,9 @@ export default function Home() {
                   </div>
 
                   <div className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-yellow/10 text-school-yellow font-bold text-xs">🎓</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-school-yellow/10 text-school-yellow">
+                      <GraduationCap className="w-4 h-4" />
+                    </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">LEAD Acharya Award</h4>
                       <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">Honoring teaching faculty excellence and digital integration success.</p>
