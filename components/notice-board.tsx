@@ -15,6 +15,15 @@ interface NoticeBoardProps {
   limit?: number;
 }
 
+function formatExternalUrl(url: string | undefined): string {
+  if (!url) return '';
+  const trimmed = url.trim();
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://') || trimmed.startsWith('mailto:')) {
+    return trimmed;
+  }
+  return `https://${trimmed}`;
+}
+
 export function NoticeBoard({ limit }: NoticeBoardProps) {
   const [notices, setNotices] = useState<Notice[]>([]);
   const [loading, setLoading] = useState(true);
@@ -77,7 +86,7 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
               </div>
               {notice.fileUrl ? (
                 <a
-                  href={notice.fileUrl}
+                  href={formatExternalUrl(notice.fileUrl)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block group-hover:underline"
@@ -93,7 +102,7 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
               )}
               {notice.fileUrl && (
                 <a
-                  href={notice.fileUrl}
+                  href={formatExternalUrl(notice.fileUrl)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 mt-2 text-[10px] font-bold text-school-red hover:underline"
@@ -179,7 +188,7 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
                 </div>
                 {notice.fileUrl ? (
                   <a
-                    href={notice.fileUrl}
+                    href={formatExternalUrl(notice.fileUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block group-hover:underline"
@@ -198,7 +207,7 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
               <div className="shrink-0 mt-4 sm:mt-0">
                 {notice.fileUrl ? (
                   <a
-                    href={notice.fileUrl}
+                    href={formatExternalUrl(notice.fileUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-school-orange/5 border border-school-orange/10 hover:bg-school-orange hover:text-white text-xs font-semibold rounded-lg transition-colors text-school-orange"
