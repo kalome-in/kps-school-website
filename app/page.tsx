@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Users, Trophy, GraduationCap, Microscope, Monitor, Library, Palette, Calendar, MessageSquare, PhoneCall, ChevronRight, Award, Star, Flag, Medal, School } from 'lucide-react';
 import { Gallery } from '@/components/gallery';
+import { NoticeBoard } from '@/components/notice-board';
 
 export default function Home() {
   return (
@@ -270,25 +271,7 @@ export default function Home() {
                 </h2>
                 <Link href="/notices" className="text-xs font-semibold text-school-gray hover:text-school-red transition-colors">View Board</Link>
               </div>
-              <div className="space-y-4">
-                {[
-                  { date: 'Oct 20', tag: 'Exam', title: 'Half-Yearly Examination Timetable Released for Grades I to X.' },
-                  { date: 'Oct 18', tag: 'Holiday', title: 'School will remain closed on Oct 24th due to Diwali.' },
-                  { date: 'Oct 15', tag: 'Circular', title: 'Parent-Teacher Meeting scheduled for coming Saturday.' },
-                ].map((notice, i) => (
-                  <div key={i} className="bg-white p-5 rounded-xl border border-gray-100 border-l-[3px] border-l-school-yellow hover:border-l-school-orange hover:shadow-sm transition-all duration-300">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-[10px] font-bold bg-[#F9FAFB] text-school-gray px-2 py-0.5 rounded border border-gray-100">
-                        {notice.date}
-                      </span>
-                      <span className="text-[10px] font-bold text-school-orange uppercase tracking-wider">
-                        {notice.tag}
-                      </span>
-                    </div>
-                    <p className="font-medium text-school-black text-sm leading-relaxed">{notice.title}</p>
-                  </div>
-                ))}
-              </div>
+              <NoticeBoard limit={3} />
             </div>
           </div>
         </div>
