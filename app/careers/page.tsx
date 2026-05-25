@@ -20,12 +20,34 @@ export default function CareersPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call to Google Sheets / Backend
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'Careers Application',
+          timestamp: new Date().toLocaleString(),
+          ...formData
+        }),
+      });
+      
+      const res = await response.json();
+      
+      if (response.ok && (res.status === 'success' || res.status === 'mock_success')) {
+        setSuccess(true);
+        setFormData({ name: '', email: '', phone: '', position: '', experience: '', resumeLink: '', message: '' });
+      } else {
+        alert('Failed to submit application. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      alert('Network error. Please check your connection and try again.');
+    } finally {
       setIsSubmitting(false);
-      setSuccess(true);
-      setFormData({ name: '', email: '', phone: '', position: '', experience: '', resumeLink: '', message: '' });
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {

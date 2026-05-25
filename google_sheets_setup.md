@@ -1,21 +1,22 @@
 # KPS Website - Google Sheets & Notifications Setup Guide
 
-This guide details how to connect the **Admissions Inquiry** and **Contact Inquiry** forms to your Google Sheets and set up automatic email notifications.
+This guide details how to connect the **Admissions Inquiry**, **Contact Inquiry**, and **Careers Application** forms to your Google Sheets and set up automatic email notifications.
 
 ---
 
 ## 📅 Step 1: Create your Google Sheets
 
-1. Go to [Google Sheets](https://sheets.google.com) and create **two separate spreadsheets**:
+1. Go to [Google Sheets](https://sheets.google.com) and create **three separate spreadsheets**:
    - One for **Admissions Inquiries** (e.g., named "KPS Admissions Inquiries").
    - One for **Contact Messages** (e.g., named "KPS Contact Messages").
+   - One for **Careers Applications** (e.g., named "KPS Careers Applications").
 2. In the first row of each sheet, you don't need to write headers manually. The script below will automatically create headers based on the form fields on the first submission!
 
 ---
 
 ## ✍️ Step 2: Set up the Google Apps Script
 
-Follow these steps for **each** of the two sheets:
+Follow these steps for **each** of the three sheets:
 
 1. Open your Google Sheet.
 2. In the top menu, go to **Extensions** $\rightarrow$ **Apps Script**.
@@ -86,6 +87,7 @@ In the hosting environment of your website (or in your local `.env` / `.env.loca
 # Google Sheets Webhook Apps Script URLs
 ADMISSIONS_SHEET_URL="PASTE_YOUR_ADMISSIONS_WEB_APP_URL_HERE"
 CONTACT_SHEET_URL="PASTE_YOUR_CONTACT_WEB_APP_URL_HERE"
+CAREERS_SHEET_URL="PASTE_YOUR_CAREERS_WEB_APP_URL_HERE"
 ```
 
 Once configured, the forms will securely submit to your Google Sheets and send email notifications directly to your inbox! If these environment variables are absent, the form will cleanly simulate success in development without raising errors.

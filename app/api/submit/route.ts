@@ -10,6 +10,8 @@ export async function POST(request: Request) {
       sheetUrl = process.env.ADMISSIONS_SHEET_URL || '';
     } else if (body.formType === 'Contact Message') {
       sheetUrl = process.env.CONTACT_SHEET_URL || '';
+    } else if (body.formType === 'Careers Application') {
+      sheetUrl = process.env.CAREERS_SHEET_URL || '';
     }
     
     if (!sheetUrl) {
