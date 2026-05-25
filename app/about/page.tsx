@@ -30,37 +30,79 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* History & Overview */}
+      {/* History & Timeline Infographic */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-school-orange font-semibold tracking-wide uppercase text-xs">
-                <span className="w-6 h-0.5 bg-school-orange"></span> Our Heritage
+          <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
+            <div className="inline-flex items-center gap-2 text-school-orange font-semibold tracking-wide uppercase text-xs">
+              <span className="w-6 h-0.5 bg-school-orange"></span> Our Journey
+            </div>
+            <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-school-black">KPS History & Growth Timeline</h2>
+            <p className="text-gray-400 text-sm md:text-base font-light">From our society establishment to a premium digital and educational powerhouse.</p>
+          </div>
+
+          <div className="relative border-l border-gray-200 ml-4 md:ml-32 space-y-12">
+            {/* Timeline Item 1 */}
+            <div className="relative pl-8 md:pl-12 group">
+              <div className="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-school-orange text-white flex items-center justify-center font-bold text-xs shadow-md group-hover:scale-110 transition-transform">
+                1
               </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-school-black leading-tight">A Legacy of Excellence in Education</h2>
-              <div className="space-y-4 text-gray-500 text-sm md:text-base leading-relaxed font-light">
-                <p>
-                  Established in 2016 by the Kalam Dreams Educational Society, Korutla Public School has rapidly grown to become a beacon of learning, innovation, and character-building in the region.
-                </p>
-                <p>
-                  We are committed to providing world-class education that shapes young minds from nursery through to high school, instilling in them the values of integrity, respect, and a lifelong love for learning.
-                </p>
-                <p>
-                  Today, we continue to embrace modern educational paradigms, combining traditional values with advanced technologies like interactive smart classrooms and IIT/NEET foundation coaching, offering a dynamic and holistic curriculum tailored for the 21st century.
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#F9FAFB] p-6 rounded-2xl border border-gray-100 hover:border-school-orange transition-all">
+                <div className="md:col-span-1">
+                  <span className="text-3xl font-extrabold text-school-orange font-heading">2016</span>
+                  <h4 className="text-sm font-bold text-school-black uppercase tracking-wider mt-1">Foundation</h4>
+                </div>
+                <div className="md:col-span-2 text-gray-500 text-xs md:text-sm leading-relaxed font-light">
+                  Established by the **Kalam Dreams Educational Society** to provide quality, concept-driven English-medium education (Nursery to Class X) in Korutla.
+                </div>
               </div>
             </div>
-            <div className="relative h-[480px] rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
-              <Image 
-                src="https://picsum.photos/seed/heritage/800/1000" 
-                alt="School Heritage" 
-                fill
-                className="object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-xl shadow-sm border border-gray-100/40">
-                <p className="font-heading font-bold text-base md:text-lg text-school-black leading-snug">{"\"Education is not preparation for life; education is life itself.\""}</p>
+
+            {/* Timeline Item 2 */}
+            <div className="relative pl-8 md:pl-12 group">
+              <div className="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-school-red text-white flex items-center justify-center font-bold text-xs shadow-md group-hover:scale-110 transition-transform">
+                2
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#F9FAFB] p-6 rounded-2xl border border-gray-100 hover:border-school-red transition-all">
+                <div className="md:col-span-1">
+                  <span className="text-3xl font-extrabold text-school-red font-heading">2019</span>
+                  <h4 className="text-sm font-bold text-school-black uppercase tracking-wider mt-1">LEAD & Smart Class</h4>
+                </div>
+                <div className="md:col-span-2 text-gray-500 text-xs md:text-sm leading-relaxed font-light">
+                  Fully integrated the **LEAD School System** with smart classrooms and multi-modal interactive panels, transforming local education with technology.
+                </div>
+              </div>
+            </div>
+
+            {/* Timeline Item 3 */}
+            <div className="relative pl-8 md:pl-12 group">
+              <div className="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-school-yellow text-school-black flex items-center justify-center font-bold text-xs shadow-md group-hover:scale-110 transition-transform">
+                3
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#F9FAFB] p-6 rounded-2xl border border-gray-100 hover:border-school-yellow transition-all">
+                <div className="md:col-span-1">
+                  <span className="text-3xl font-extrabold text-school-yellow font-heading">2023</span>
+                  <h4 className="text-sm font-bold text-school-black uppercase tracking-wider mt-1">Spectropy Foundation</h4>
+                </div>
+                <div className="md:col-span-2 text-gray-500 text-xs md:text-sm leading-relaxed font-light">
+                  Launched the **KPS Spectropy IIT-NEET Foundation** coaching program, preparing middle and high school batches for national competitive exams.
+                </div>
+              </div>
+            </div>
+
+            {/* Timeline Item 4 */}
+            <div className="relative pl-8 md:pl-12 group">
+              <div className="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-school-gray text-white flex items-center justify-center font-bold text-xs shadow-md group-hover:scale-110 transition-transform">
+                4
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#F9FAFB] p-6 rounded-2xl border border-gray-100 hover:border-school-gray transition-all">
+                <div className="md:col-span-1">
+                  <span className="text-3xl font-extrabold text-school-gray font-heading">Present</span>
+                  <h4 className="text-sm font-bold text-school-black uppercase tracking-wider mt-1">Futuristic Tech</h4>
+                </div>
+                <div className="md:col-span-2 text-gray-500 text-xs md:text-sm leading-relaxed font-light">
+                  Introducing **Computer Coding Skills (CCS)** and Pinnacle Pearson curriculums, creating a world-class environment for all-round personality development.
+                </div>
               </div>
             </div>
           </div>
@@ -110,34 +152,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership / Principal Message */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-school-black text-white rounded-2xl p-8 md:p-12 border border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-dot-pattern opacity-10"></div>
-            <div className="flex flex-col md:flex-row gap-12 items-center relative z-10">
-              <div className="w-44 h-44 md:w-56 md:h-56 rounded-2xl overflow-hidden shrink-0 border border-white/10 shadow-md">
-                <Image 
-                  src="https://picsum.photos/seed/principal/400/400" 
-                  alt="Principal Gujjeti Venkatesh" 
-                  width={224}
-                  height={224}
-                  className="object-cover w-full h-full"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="space-y-6">
-                <div className="space-y-1">
-                  <h2 className="text-2xl md:text-3xl font-heading font-bold">Message from the Principal & Correspondent</h2>
-                  <h4 className="text-school-yellow font-semibold tracking-wider text-xs uppercase">Gujjeti Venkatesh, M.Sc (Chemistry), B.Ed</h4>
-                  <p className="text-[10px] text-gray-400">Post Graduate in Chemistry, Kakatiya University (2006) | Former Vice Principal, Sri Arunodaya Degree College | Director & Principal</p>
+      {/* Leadership / Principal Message - Magazine Visual Redesign */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-school-black to-neutral-900 text-white rounded-3xl p-8 md:p-16 border border-white/10 relative shadow-2xl">
+            <div className="absolute inset-0 bg-dot-pattern opacity-10 pointer-events-none"></div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+              {/* Left Column: Image & Badges (5 cols) */}
+              <div className="lg:col-span-5 space-y-6 flex flex-col items-center lg:items-start">
+                <div className="w-56 h-56 md:w-64 md:h-64 rounded-3xl overflow-hidden border-2 border-white/20 shadow-xl relative group">
+                  <Image 
+                    src="https://picsum.photos/seed/principal/400/400" 
+                    alt="Principal Gujjeti Venkatesh" 
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-                <div className="space-y-4 text-gray-300 italic font-light text-sm md:text-base leading-relaxed">
-                  <p>
-                    {"\"At Korutla Public School, we believe education should go beyond memorization. Our core mission is to foster thinking skills, logical analysis, and hands-on practical experience. We aim to create a creative environment where comparison and contrast learning guide students to understand concepts deeply.\""}
+                
+                {/* Visual Badges/Chips */}
+                <div className="flex flex-wrap gap-2 justify-center lg:justify-start w-full">
+                  <span className="px-3 py-1 rounded-full bg-school-orange/20 border border-school-orange/30 text-school-orange text-[10px] font-bold uppercase tracking-wider">Correspondent</span>
+                  <span className="px-3 py-1 rounded-full bg-school-red/20 border border-school-red/30 text-school-red text-[10px] font-bold uppercase tracking-wider">Director & Principal</span>
+                  <span className="px-3 py-1 rounded-full bg-school-yellow/20 border border-school-yellow/30 text-school-yellow text-[10px] font-bold uppercase tracking-wider">M.Sc Chemistry</span>
+                  <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-gray-300 text-[10px] font-bold uppercase tracking-wider">IIT Coach</span>
+                </div>
+              </div>
+
+              {/* Right Column: Message & Details (7 cols) */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="space-y-2">
+                  <span className="text-[10px] text-school-yellow font-bold uppercase tracking-widest">Leadership Profile</span>
+                  <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-white leading-tight">
+                    Gujjeti Venkatesh
+                  </h2>
+                  <p className="text-xs text-gray-400">Post Graduate in Chemistry, Kakatiya University (2006) | Worked as Vice Principal at Sri Arunodaya Degree College</p>
+                </div>
+                
+                <div className="relative border-l-2 border-school-orange pl-6 space-y-4">
+                  <span className="text-4xl font-serif text-school-orange absolute -left-2 -top-4 opacity-55">“</span>
+                  <p className="text-gray-300 italic text-sm md:text-base leading-relaxed font-light">
+                    At Korutla Public School, we promote learning that focuses on conceptual clarity, logical analysis, thinking skills, comparison and contrast, and hands-on practical experience.
                   </p>
-                  <p>
-                    {"By integrating advanced systems like the LEAD curriculum, smart classroom technology, and KPS Spectropy IIT-NEET coaching, we ensure our students build a solid academic foundation. We strive to nurture independent thinkers, confident communicators, and responsible future leaders who are ready to face the world.\""}
+                  <p className="text-gray-300 italic text-sm md:text-base leading-relaxed font-light">
+                    By combining Pinnacle Pearson, LEAD, and Spectropy IIT-NEET coaching, we create a futuristic environment where students become independent thinkers, confident communicators, and future leaders.
                   </p>
                 </div>
               </div>
@@ -156,18 +215,19 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-school-black">Our Core Values</h2>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Award, title: 'Excellence', color: 'hover:border-school-orange hover:text-school-orange' },
-              { icon: Heart, title: 'Compassion', color: 'hover:border-school-red hover:text-school-red' },
-              { icon: Users, title: 'Community', color: 'hover:border-school-yellow hover:text-school-yellow' },
-              { icon: Target, title: 'Integrity', color: 'hover:border-school-gray hover:text-school-gray' },
+              { icon: Award, title: 'Excellence', desc: 'Striving for highest quality in academics, thinking skills, and sports achievements.', bg: 'from-school-orange/10 via-school-orange/5 to-white', color: 'text-school-orange border-school-orange/20' },
+              { icon: Heart, title: 'Compassion', desc: 'Developing social-emotional care, empathy, caring behaviors, and good habits.', bg: 'from-school-red/10 via-school-red/5 to-white', color: 'text-school-red border-school-red/20' },
+              { icon: Users, title: 'Community', desc: 'Fostering strong parent-teacher collaborations and student-led engagement.', bg: 'from-school-yellow/15 via-school-yellow/5 to-white', color: 'text-school-yellow border-school-yellow/30' },
+              { icon: Target, title: 'Integrity', desc: 'Building ethical grounding, responsibility, moral values, and civic discipline.', bg: 'from-school-gray/10 via-school-gray/5 to-white', color: 'text-school-gray border-school-gray/20' },
             ].map((value, i) => (
-              <div key={i} className="flex flex-col items-center space-y-4 group">
-                <div className={`w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-sm border border-gray-100 text-school-gray transition-all duration-300 hover:shadow-md ${value.color}`}>
+              <div key={i} className={`bg-gradient-to-br ${value.bg} p-8 rounded-3xl border border-gray-100 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center space-y-4`}>
+                <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md border ${value.color}`}>
                   <value.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-base font-bold font-heading text-school-black">{value.title}</h3>
+                <h3 className="text-xl font-bold font-heading text-school-black">{value.title}</h3>
+                <p className="text-xs text-gray-400 font-light leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>

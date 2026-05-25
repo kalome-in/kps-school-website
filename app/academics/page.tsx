@@ -158,17 +158,124 @@ export default function AcademicsPage() {
 
             </div>
 
-            {/* Extra details sub-grid for themes/LEAD/IIT */}
-            {section.extraItems && (
-              <div className="mt-16 bg-[#F9FAFB] rounded-2xl p-8 border border-gray-100">
-                <h3 className="font-heading font-bold text-lg text-school-black mb-6 border-b border-gray-200 pb-3">
-                  {section.extraTitle}
+            {/* Custom Infographics depending on Section */}
+            {section.id === 'preprimary' && (
+              <div className="mt-16 bg-gradient-to-br from-school-yellow/10 via-white to-school-yellow/5 rounded-3xl p-8 border border-school-yellow/20">
+                <h3 className="font-heading font-extrabold text-xl text-school-black mb-8 border-b border-gray-200 pb-3 flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-school-yellow animate-pulse"></span>
+                  Pre-Primary Theme-Based Areas
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {section.extraItems.map((item, idx) => (
-                    <div key={idx} className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm space-y-2">
-                      <h4 className="font-heading font-bold text-sm text-school-black">{item.label}</h4>
-                      <p className="text-xs text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    { label: 'English & Phonics', desc: 'Active phonic sounds, sight words, reading comprehension, and storytelling.', icon: '🗣️' },
+                    { label: 'Mathematics', desc: 'Counting, shape properties, basic math operations, and number lines.', icon: '🔢' },
+                    { label: 'EVS Exploration', desc: 'Hands-on discovery and active experience of our surrounding environment.', icon: '🌱' },
+                    { label: 'Social & Emotional', desc: 'Focusing on good habit cultivation, manners, and sharing emotions.', icon: '❤️' },
+                    { label: 'Music & Movement', desc: 'Rhythms, nursery action songs, and active physical play.', icon: '🎵' },
+                    { label: 'Creative & Physical', desc: 'Kids yoga, painting, visual arts, crafts, and motor skill games.', icon: '🎨' }
+                  ].map((item, idx) => (
+                    <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all flex gap-4 items-start">
+                      <span className="text-3xl bg-school-yellow/10 p-2.5 rounded-xl">{item.icon}</span>
+                      <div className="space-y-1">
+                        <h4 className="font-heading font-bold text-sm text-school-black">{item.label}</h4>
+                        <p className="text-xs text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {section.id === 'primary' && (
+              <div className="mt-16 bg-gradient-to-br from-school-orange/10 via-white to-school-orange/5 rounded-3xl p-8 border border-school-orange/20">
+                <h3 className="font-heading font-extrabold text-xl text-school-black mb-8 border-b border-gray-200 pb-3 flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-school-orange animate-pulse"></span>
+                  LEAD Advantage & Coding Infographic
+                </h3>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                  {/* Left Column: National Championship comparison bar */}
+                  <div className="lg:col-span-7 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                    <h4 className="font-heading font-bold text-sm text-school-black uppercase tracking-wider">National LEAD Championship Standings</h4>
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-[10px] font-bold text-gray-400">
+                        <span>Total Competitors</span>
+                        <span>200,000 Students</span>
+                      </div>
+                      <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-gray-300 w-full"></div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-[10px] font-bold text-school-orange">
+                        <span>Elite Qualifiers</span>
+                        <span>2,000 Finalists</span>
+                      </div>
+                      <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-school-orange w-[15%]"></div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-[10px] font-bold text-school-red">
+                        <span>KPS National Finalists</span>
+                        <span className="font-extrabold">8 Students</span>
+                      </div>
+                      <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-school-orange to-school-red w-[5%] animate-pulse"></div>
+                      </div>
+                    </div>
+                    
+                    <p className="text-xs text-gray-400 leading-relaxed font-light pt-2">
+                      Our interactive primary curriculum prepares students for national competitions, allowing **8 KPS students** to secure ranks in the elite top finals of the country.
+                    </p>
+                  </div>
+
+                  {/* Right Column: Coding skills and student app chips */}
+                  <div className="lg:col-span-5 grid grid-cols-1 gap-4">
+                    <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center">
+                      <span className="text-3xl bg-school-orange/10 p-2.5 rounded-xl">💻</span>
+                      <div>
+                        <h4 className="font-heading font-bold text-sm text-school-black">Coding Skills (CCS)</h4>
+                        <p className="text-xs text-gray-400 mt-0.5 leading-relaxed font-light">Basic logic, algorithms, and technology orientation.</p>
+                      </div>
+                    </div>
+                    <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center">
+                      <span className="text-3xl bg-school-orange/10 p-2.5 rounded-xl">📱</span>
+                      <div>
+                        <h4 className="font-heading font-bold text-sm text-school-black">LEAD Student App</h4>
+                        <p className="text-xs text-gray-400 mt-0.5 leading-relaxed font-light">Interactive tracking and home activities for seamless learning.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {section.id === 'highschool' && (
+              <div className="mt-16 bg-gradient-to-br from-school-red/10 via-white to-school-red/5 rounded-3xl p-8 border border-school-red/20">
+                <h3 className="font-heading font-extrabold text-xl text-school-black mb-8 border-b border-gray-200 pb-3 flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-school-red animate-pulse"></span>
+                  KPS Spectropy IIT-NEET Pathway
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                  {[
+                    { step: '01', title: 'ICON-IIT Batch', desc: 'Max 35 selected students per batch for focused, personal coaching.', icon: '🎯' },
+                    { step: '02', title: 'Curriculum & Material', desc: 'Comprehensive foundation-oriented prep content and reference guides.', icon: '📚' },
+                    { step: '03', title: 'Online Tab Testing', desc: 'Weekly/monthly exams conducted on tablets to simulate JEE patterns.', icon: '📱' },
+                    { step: '04', title: 'Video Solutions', desc: 'Instant access to mock test video solutions for clearing learning gaps.', icon: '🎬' }
+                  ].map((item, idx) => (
+                    <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group hover:border-school-red transition-all">
+                      <span className="absolute -right-2 -bottom-2 text-6xl font-extrabold text-gray-100/60 font-heading select-none group-hover:text-school-red/5 transition-colors">{item.step}</span>
+                      <div className="space-y-4 relative z-10">
+                        <span className="text-3xl bg-school-red/5 p-2 rounded-xl inline-block">{item.icon}</span>
+                        <div className="space-y-1">
+                          <h4 className="font-heading font-bold text-sm text-school-black">{item.title}</h4>
+                          <p className="text-xs text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
