@@ -33,7 +33,8 @@ export async function POST(request: Request) {
     });
     
     const resultText = await response.text();
-    if (resultText.trim().startsWith('<!DOCTYPE') || resultText.trim().startsWith('<html')) {
+    const cleanResult = resultText.trim().toLowerCase();
+    if (cleanResult.startsWith('<!doctype') || cleanResult.startsWith('<html')) {
       console.warn(`Webhook URL for ${body.formType} returned HTML instead of JSON. Ensure you did not paste a spreadsheet/form URL directly. You must deploy the Apps Script as a Web App (access: "Anyone") and use the deployed Web App URL.`);
     }
     

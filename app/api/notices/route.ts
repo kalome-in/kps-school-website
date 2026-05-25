@@ -18,7 +18,8 @@ export async function GET() {
     }
 
     const responseText = await response.text();
-    if (responseText.trim().startsWith('<!DOCTYPE') || responseText.trim().startsWith('<html')) {
+    const cleanText = responseText.trim().toLowerCase();
+    if (cleanText.startsWith('<!doctype') || cleanText.startsWith('<html')) {
       console.warn('NOTICES_SHEET_URL returned HTML instead of JSON. Ensure you did not paste a spreadsheet/form URL directly. You must deploy the Apps Script as a Web App (access: "Anyone") and use the deployed Web App URL.');
       return NextResponse.json({ status: 'mock_success', data: getFallbackNotices() });
     }
