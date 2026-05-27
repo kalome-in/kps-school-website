@@ -130,7 +130,7 @@ export default function ContactPage() {
             </div>
 
             {/* Google Maps Embed */}
-            <div className="w-full h-64 bg-gray-50 rounded-2xl overflow-hidden relative border border-gray-200/60 shadow-sm">
+            <div className="w-full h-64 bg-gray-50 rounded-2xl overflow-hidden relative border border-gray-100 shadow-sm">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.3642701077865!2d78.70836876332763!3d18.826464272747984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcd0b24ae43c8d1%3A0x9c502bf94492cc36!2sKorutla%20Public%20School%20E%2FM!5e0!3m2!1sen!2sin!4v1779708958621!5m2!1sen!2sin" 
                 width="100%" 
@@ -149,7 +149,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="bg-white rounded-2xl border border-gray-200/60 p-8 lg:p-10 relative z-10 lg:-mt-32 shadow-sm">
+          <div className="bg-white rounded-2xl border border-gray-100 p-8 lg:p-10 relative z-10 lg:-mt-32 shadow-sm">
             <h2 className="text-xl font-heading font-bold text-school-black mb-6">Send a Message</h2>
             
             {success ? (

@@ -148,7 +148,7 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
               className={`whitespace-nowrap px-4 py-1.5 rounded-lg border text-xs font-semibold transition-all ${
                 activeFilter === filter
                   ? 'bg-school-orange text-white border-school-orange shadow-sm'
-                  : 'border-gray-200 text-gray-500 hover:bg-gray-50'
+                  : 'border-gray-100 text-gray-500 hover:bg-gray-50'
               }`}
             >
               {filter}
@@ -221,7 +221,7 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
             </div>
           ))
         ) : (
-          <div className="text-center py-12 border border-dashed border-gray-200 rounded-xl bg-[#F9FAFB]/50">
+          <div className="text-center py-12 border border-dashed border-gray-100 rounded-xl bg-[#F9FAFB]/50">
             <Bell className="w-8 h-8 text-gray-300 mx-auto mb-2" />
             <p className="text-sm text-gray-400 font-light">No notices found matching your criteria.</p>
           </div>

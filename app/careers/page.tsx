@@ -108,7 +108,7 @@ export default function CareersPage() {
           </div>
 
           {/* Application Form */}
-          <div className="bg-white rounded-2xl border border-gray-200/60 p-8 shadow-sm -mt-24 relative z-10">
+          <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm -mt-24 relative z-10">
             <div className="w-12 h-12 bg-school-orange/5 border border-school-orange/10 rounded-xl flex items-center justify-center mb-6 text-school-orange">
               <Briefcase className="w-5 h-5" />
             </div>

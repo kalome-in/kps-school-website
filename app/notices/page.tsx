@@ -23,7 +23,7 @@ export default function NoticesPage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <div className="bg-white rounded-2xl border border-gray-200/60 p-6 md:p-8 shadow-sm">
+        <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-sm">
           <NoticeBoard />
         </div>
       </section>

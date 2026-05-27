@@ -147,7 +147,7 @@ export default function AdmissionsPage() {
           </div>
 
           {/* Form */}
-          <div className="bg-white rounded-2xl border border-gray-200/60 p-8 h-fit sticky top-28 shadow-sm">
+          <div className="bg-white rounded-2xl border border-gray-100 p-8 h-fit sticky top-28 shadow-sm">
             <h2 className="text-xl font-heading font-bold text-school-black mb-6">Admission Inquiry Form</h2>
             
             {success ? (

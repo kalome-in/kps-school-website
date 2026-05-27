@@ -1,56 +1,200 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Users, Trophy, GraduationCap, Microscope, Monitor, Library, Palette, Calendar, MessageSquare, PhoneCall, ChevronRight, Award, Star, Flag, Medal, School } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, Trophy, GraduationCap, Microscope, Monitor, Library, Palette, Calendar, MessageSquare, PhoneCall, ChevronRight, Award, Star, Flag, Medal, School, ChevronLeft, ChevronDown } from 'lucide-react';
 import { Gallery } from '@/components/gallery';
 import { NoticeBoard } from '@/components/notice-board';
 
+const SLIDES = [
+  {
+    tag: 'Welcome to Korutla Public School',
+    titleParts: ['Empowering Minds,', 'Educating Leaders,', 'Elevating Futures.'],
+    desc: 'Experience a modern, competitive, and technology-enabled educational environment focused on complete student development and exam preparation.',
+    image: '/images/hero_banner_2.png',
+    primaryAction: { label: 'Begin Admission', href: '/admissions' },
+    secondaryAction: { label: 'Discover More', href: '/about' }
+  },
+  {
+    tag: 'Pre-Primary Education (Nursery - UKG)',
+    titleParts: ['Nurturing Curiosity', 'In Foundational Years,', 'Pearson Pinnacle+ System.'],
+    desc: 'Powered by Pinnacle+ Young Explorers, blending digital modules, hands-on Activity Kits, and parent app support for early cognitive discovery.',
+    image: '/images/preprimary_learning.jpg',
+    primaryAction: { label: 'Explore Pre-Primary', href: '/academics/pre-primary' },
+    secondaryAction: { label: 'Apply Now', href: '/admissions' }
+  },
+  {
+    tag: 'Primary School (Classes I - V)',
+    titleParts: ['Concept-Driven Growth', 'In Smart Classrooms,', 'LEAD Integrated Learning.'],
+    desc: 'Equipped with multimodal interactive boards, levels-based English (ELGA), student dashboards, and national championship exposures.',
+    image: '/images/primary_learning.jpg',
+    primaryAction: { label: 'Explore Primary levels', href: '/academics/primary' },
+    secondaryAction: { label: 'Apply Now', href: '/admissions' }
+  },
+  {
+    tag: 'High School & Academy (Classes VI - X)',
+    titleParts: ['Rigorous Coaching &', 'Competitive Exams Prep,', 'Spectropy IIT-NEET.'],
+    desc: 'Balancing board education with Spectropy Maestro (JEE) and Catalyst (NEET) pathways, using AI diagnostics to target conceptual gaps.',
+    image: '/images/highschool_learning.jpg',
+    primaryAction: { label: 'Explore High School', href: '/academics/high-school' },
+    secondaryAction: { label: 'Apply Now', href: '/admissions' }
+  },
+  {
+    tag: 'Holistic Development & Infrastructure',
+    titleParts: ['Fostering All-Round', 'Development, Sports,', 'Arts & Campus Life.'],
+    desc: 'Equipped with modern science laboratories, library systems, and sports facilities to encourage artistic, physical, and holistic growth.',
+    image: '/images/hero_banner.jpg',
+    primaryAction: { label: 'Explore Facilities', href: '/facilities' },
+    secondaryAction: { label: 'Inquire Today', href: '/contact' }
+  }
+];
+
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleNext = useCallback(() => {
+    setCurrentSlide(prev => (prev < SLIDES.length - 1 ? prev + 1 : 0));
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setCurrentSlide(prev => (prev > 0 ? prev - 1 : SLIDES.length - 1));
+  }, []);
+
+  const goToSlide = (idx: number) => {
+    setCurrentSlide(idx);
+  };
+
+  // Auto-play interval
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [handleNext]);
+
   return (
     <div className="flex flex-col w-full bg-white">
       {/* SECTION 1 - HERO SECTION */}
-      <section className="relative w-full h-[90vh] min-h-[650px] flex items-center justify-center overflow-hidden bg-school-black">
+      <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-school-black">
         {/* Brand Dot Pattern Background */}
         <div className="absolute inset-0 z-0 bg-dot-pattern opacity-25"></div>
-        
-        {/* Background Image showing a campus or students */}
-        <Image 
-          src="/images/hero_banner.jpg" 
-          alt="Korutla Public School Campus" 
-          fill
-          priority
-          className="object-cover opacity-40 mix-blend-overlay scale-102 transition-transform duration-10000"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gradient-to-tr from-school-black via-school-black/85 to-transparent" />
 
+        {/* Carousel Background Images Stack */}
+        {SLIDES.map((slide, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out z-0 ${idx === currentSlide ? 'opacity-40' : 'opacity-0 pointer-events-none'
+              }`}
+          >
+            <Image
+              src={slide.image}
+              alt={slide.tag}
+              fill
+              priority={idx === 0}
+              className="object-cover mix-blend-overlay scale-102"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-tr from-school-black via-school-black/85 to-transparent z-0" />
+
+        {/* Left Arrow Control */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-4 md:left-8 z-20 text-white/70 hover:text-white p-2 md:p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all backdrop-blur-sm shadow-lg animate-fadeIn"
+          aria-label="Previous Slide"
+        >
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+
+        {/* Right Arrow Control */}
+        <button
+          onClick={handleNext}
+          className="absolute right-4 md:right-8 z-20 text-white/70 hover:text-white p-2 md:p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all backdrop-blur-sm shadow-lg animate-fadeIn"
+          aria-label="Next Slide"
+        >
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+
+        {/* Slide Content Display */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-4xl space-y-8">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-school-yellow font-bold text-[10px] tracking-widest uppercase border border-white/20 backdrop-blur-md">
+          <div className="max-w-4xl space-y-6">
+            <span
+              key={`tag-${currentSlide}`}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-school-yellow font-bold text-[10px] tracking-widest uppercase border border-white/20 backdrop-blur-md"
+            >
               <span className="w-2 h-2 rounded-full bg-school-orange animate-pulse"></span>
-              Welcome to Korutla Public School
+              {SLIDES[currentSlide].tag}
             </span>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold text-white leading-[1.1] tracking-tight">
-              Empowering Minds,<br />
-              Educating Leaders,<br />
-              <span className="bg-gradient-to-r from-school-orange via-school-red to-school-yellow bg-clip-text text-transparent drop-shadow-sm">Elevating Futures.</span>
+
+            <h1
+              key={`title-${currentSlide}`}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-[1.1] tracking-tight min-h-[105px] sm:min-h-[135px] md:min-h-[165px]"
+            >
+              {SLIDES[currentSlide].titleParts[0]}<br />
+              {SLIDES[currentSlide].titleParts[1]}<br />
+              <span className="bg-gradient-to-r from-school-orange via-school-red to-school-yellow bg-clip-text text-transparent drop-shadow-sm">
+                {SLIDES[currentSlide].titleParts[2]}
+              </span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl font-light">
-              Experience a modern, competitive, and technology-enabled educational environment focused on complete student development and exam preparation.
+
+            <p
+              key={`desc-${currentSlide}`}
+              className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed max-w-2xl font-light min-h-[48px]"
+            >
+              {SLIDES[currentSlide].desc}
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link href="/admissions" className="bg-gradient-to-r from-school-orange to-school-red hover:from-school-red hover:to-school-yellow text-white hover:text-school-black px-8 py-4 rounded-xl font-bold transition-all shadow-md flex items-center gap-2 text-sm">
-                Begin Admission <ArrowRight className="w-5 h-5" />
+
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link
+                href={SLIDES[currentSlide].primaryAction.href}
+                className="bg-gradient-to-r from-school-orange to-school-red hover:from-school-red hover:to-school-yellow text-white hover:text-school-black px-6 py-3 rounded-xl font-bold transition-all shadow-md flex items-center gap-2 text-xs md:text-sm"
+              >
+                {SLIDES[currentSlide].primaryAction.label} <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </Link>
-              <Link href="/about" className="bg-white/5 hover:bg-white/10 text-white backdrop-blur-md px-8 py-4 rounded-xl font-bold transition-all border border-white/20 flex items-center gap-2 text-sm">
-                Discover More
+              <Link
+                href={SLIDES[currentSlide].secondaryAction.href}
+                className="bg-white/5 hover:bg-white/10 text-white backdrop-blur-md px-6 py-3 rounded-xl font-bold transition-all border border-white/20 flex items-center gap-2 text-xs md:text-sm"
+              >
+                {SLIDES[currentSlide].secondaryAction.label}
               </Link>
             </div>
           </div>
         </div>
+
+        {/* Carousel Indicators (Dots) */}
+        <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-2.5">
+          {SLIDES.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToSlide(idx)}
+              className={`w-3 h-3 rounded-full border transition-all duration-300 ${idx === currentSlide
+                  ? 'bg-school-orange border-school-orange w-8'
+                  : 'bg-white/20 border-white/10 hover:bg-white/40'
+                }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </section>
 
+      {/* SCROLL BUTTON BAR (BELOW CAROUSEL) */}
+      <div className="w-full bg-white flex justify-center py-6 border-b border-gray-100 relative z-10">
+        <Link
+          href="#overview"
+          className="flex flex-col items-center gap-1.5 group text-school-gray hover:text-school-orange transition-colors duration-300"
+          aria-label="Scroll to Overview"
+        >
+          <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-school-orange transition-colors">
+            Scroll to Explore
+          </span>
+          <ChevronDown className="w-5 h-5 animate-bounce text-school-orange" />
+        </Link>
+      </div>
+
       {/* SECTION 2 - SCHOOL OVERVIEW & STATS INFOGRAPHIC */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section id="overview" className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -63,7 +207,7 @@ export default function Home() {
               <p className="text-gray-500 leading-relaxed text-sm md:text-base font-light">
                 At Korutla Public School, managed by Kalam Dreams Educational Society, we believe in empowering every child to discover their true potential. Established in 2016, our comprehensive curriculum, state-of-the-art facilities, and dedicated faculty create an environment where learning is engaging, practical, and futuristic.
               </p>
-              
+
               {/* Vision & Mission Visual Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-gray-100">
                 <div className="p-5 rounded-2xl bg-gradient-to-br from-school-orange/5 to-transparent border border-school-orange/10">
@@ -82,16 +226,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             {/* Stats Dashboard Infographic */}
             <div className="bg-gradient-to-br from-school-black to-neutral-900 text-white p-8 rounded-3xl border border-white/10 relative overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-dot-pattern opacity-10"></div>
-              
+
               <h3 className="text-lg font-heading font-bold mb-6 text-school-yellow flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-school-yellow animate-pulse"></span>
                 KPS Performance Metrics
               </h3>
-              
+
               <div className="grid grid-cols-2 gap-6 relative z-10">
                 {/* Metric 1 */}
                 <div className="bg-white/5 border border-white/10 p-5 rounded-2xl flex flex-col justify-between hover:bg-white/10 transition-all">
@@ -134,6 +278,88 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION 2.5 - OUR ACADEMIC & CURRICULUM PARTNERS */}
+      <section className="py-16 bg-[#F9FAFB] border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+            <div className="inline-flex items-center gap-2 text-school-orange font-semibold tracking-wide uppercase text-xs">
+              <span className="w-6 h-0.5 bg-school-orange"></span> Curriculum Integration
+            </div>
+            <h2 className="text-2xl md:text-3xl font-heading font-extrabold text-school-black">
+              Powered by India&apos;s Leading Educational Partners
+            </h2>
+            <p className="text-gray-500 text-xs md:text-sm font-light leading-relaxed">
+              We collaborate with premier academic and technological institutions to deliver a structured, future-ready learning pathway from foundational years to competitive exam success.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            {/* Partner 1 - Pinnacle+ */}
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6">
+              <div className="h-16 relative w-40 select-none">
+                <Image
+                  src="/images/Pinnacle_plus_logo.webp"
+                  alt="Pinnacle+ Logo"
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-heading font-bold text-sm text-school-black">Pinnacle+ School System</h4>
+                <p className="text-xs text-gray-500 font-light leading-relaxed">
+                  Powering our pre-primary foundational years with Pearson blended learning, Young Explorers modules, and NEP-aligned activity kits.
+                </p>
+              </div>
+              <Link href="/academics/pre-primary" className="inline-flex items-center text-xs font-semibold text-school-orange hover:underline">
+                Explore Curriculum <ChevronRight className="w-3.5 h-3.5 ml-1" />
+              </Link>
+            </div>
+
+            {/* Partner 2 - LEAD */}
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6">
+              <div className="h-16 relative w-32 select-none">
+                <Image
+                  src="/images/lead_school_logo.webp"
+                  alt="LEAD School Logo"
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-heading font-bold text-sm text-school-black">LEAD Integrated System</h4>
+                <p className="text-xs text-gray-500 font-light leading-relaxed">
+                  Driving our primary levels with multimodal smartboards, teacher app resources, student apps, and national championship exposures.
+                </p>
+              </div>
+              <Link href="/academics/primary" className="inline-flex items-center text-xs font-semibold text-school-orange hover:underline">
+                Explore Curriculum <ChevronRight className="w-3.5 h-3.5 ml-1" />
+              </Link>
+            </div>
+
+            {/* Partner 3 - Spectropy */}
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6">
+              <div className="h-16 relative w-36 select-none">
+                <Image
+                  src="/images/spectropy_logo.png"
+                  alt="Spectropy Logo"
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-heading font-bold text-sm text-school-black">Spectropy IIT-NEET Foundation</h4>
+                <p className="text-xs text-gray-500 font-light leading-relaxed">
+                  Preparing high schoolers for national milestones (JEE/NEET) using Bloom&apos;s Taxonomy, AI-driven diagnostics, and hybrid testing patterns.
+                </p>
+              </div>
+              <Link href="/academics/high-school" className="inline-flex items-center text-xs font-semibold text-school-orange hover:underline">
+                Explore Curriculum <ChevronRight className="w-3.5 h-3.5 ml-1" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 3 - WHY CHOOSE US INFOGRAPHIC */}
       <section className="py-24 bg-gradient-to-b from-[#F9FAFB] to-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,7 +389,7 @@ export default function Home() {
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-bold shadow-md ${feature.iconBg}`}>
                     <feature.icon className="w-6 h-6" />
                   </div>
-                  <span className="text-xs font-heading font-extrabold text-gray-300 group-hover:text-school-orange transition-colors">0{i+1}</span>
+                  <span className="text-xs font-heading font-extrabold text-gray-300 group-hover:text-school-orange transition-colors">0{i + 1}</span>
                 </div>
                 <h3 className="text-xl font-bold font-heading text-school-black mb-3">{feature.title}</h3>
                 <p className="text-gray-500 text-xs md:text-sm leading-relaxed font-light">{feature.desc}</p>
@@ -233,16 +459,19 @@ export default function Home() {
             <p className="text-gray-400 text-sm md:text-base font-light">An environment designed to inspire creativity, foster collaboration, and support comprehensive learning.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Monitor, name: 'Computer Labs', hoverColor: 'hover:border-school-orange hover:text-school-orange' },
-              { icon: Microscope, name: 'Science Labs', hoverColor: 'hover:border-school-red hover:text-school-red' },
-              { icon: Library, name: 'Digital Library', hoverColor: 'hover:border-school-yellow hover:text-school-yellow' },
-              { icon: Trophy, name: 'Sports Complex', hoverColor: 'hover:border-school-orange hover:text-school-orange' },
+              { icon: Monitor, name: 'Computer Labs', desc: 'Fully air-conditioned computer center with individual high-speed coding terminals.', bg: 'from-school-orange/10 via-school-orange/5 to-white', color: 'text-school-orange border-school-orange/20' },
+              { icon: Microscope, name: 'Science Labs', desc: 'Advanced Physics, Chemistry, and Biology laboratories equipped for hands-on experiments.', bg: 'from-school-red/10 via-school-red/5 to-white', color: 'text-school-red border-school-red/20' },
+              { icon: Library, name: 'Digital Library', desc: 'A rich physical catalog of reference books paired with digital resource terminals.', bg: 'from-school-yellow/15 via-school-yellow/5 to-white', color: 'text-school-yellow border-school-yellow/30' },
+              { icon: Trophy, name: 'Sports Complex', desc: 'Outdoor courts, play fields, and expert coaching programs for all athletic disciplines.', bg: 'from-school-orange/10 via-school-orange/5 to-white', color: 'text-school-orange border-school-orange/20' },
             ].map((facility, i) => (
-              <div key={i} className={`aspect-square relative group overflow-hidden rounded-2xl border border-gray-200/60 bg-white flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-sm ${facility.hoverColor}`}>
-                <facility.icon className="w-10 h-10 text-school-gray mb-4 group-hover:scale-105 transition-transform duration-300" />
-                <h3 className="font-heading font-semibold text-base text-school-black">{facility.name}</h3>
+              <div key={i} className={`bg-gradient-to-br ${facility.bg} p-8 rounded-3xl border border-gray-100 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center space-y-4`}>
+                <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-md border ${facility.color}`}>
+                  <facility.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold font-heading text-school-black">{facility.name}</h3>
+                <p className="text-xs text-gray-400 font-light leading-relaxed">{facility.desc}</p>
               </div>
             ))}
           </div>
@@ -259,7 +488,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Gallery Column */}
-            <div className="bg-white p-6 md:p-8 rounded-3xl border border-gray-200/60 shadow-sm flex flex-col justify-between">
+            <div className="bg-white p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col justify-between">
               <Gallery />
             </div>
 
@@ -293,9 +522,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Card 1 - Sports */}
-            <div className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-xl relative overflow-hidden group hover:border-school-orange transition-all duration-300">
+            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl relative overflow-hidden group hover:border-school-orange transition-all duration-300">
               <div className="absolute top-0 right-0 w-32 h-32 bg-school-orange/5 rounded-bl-full group-hover:scale-110 transition-transform"></div>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-school-orange/10 flex items-center justify-center text-school-orange">
@@ -342,9 +571,9 @@ export default function Home() {
             </div>
 
             {/* Card 2 - Olympiads */}
-            <div className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-xl relative overflow-hidden group hover:border-school-red transition-all duration-300">
+            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl relative overflow-hidden group hover:border-school-red transition-all duration-300">
               <div className="absolute top-0 right-0 w-32 h-32 bg-school-red/5 rounded-bl-full group-hover:scale-110 transition-transform"></div>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-school-red/10 flex items-center justify-center text-school-red">
@@ -363,7 +592,7 @@ export default function Home() {
                     </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">All India Math Challenge</h4>
-                      <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">B. Nagachaitanya (Grade V) secured the **3rd Rank** at the national level.</p>
+                      <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">B. Nagachaitanya (Grade V) secured the <span className="font-semibold text-school-black">3rd Rank</span> at the national level.</p>
                     </div>
                   </div>
 
@@ -373,7 +602,7 @@ export default function Home() {
                     </span>
                     <div>
                       <h4 className="font-heading font-bold text-sm text-school-black">31st State Level Olympiad</h4>
-                      <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">Suthari Shanvitha (Grade III) achieved **State 3rd Rank** in Suchirindia.</p>
+                      <p className="text-xs text-gray-400 mt-1 leading-relaxed font-light">Suthari Shanvitha (Grade III) achieved <span className="font-semibold text-school-black">State 3rd Rank</span> in Suchirindia.</p>
                     </div>
                   </div>
 
@@ -391,9 +620,9 @@ export default function Home() {
             </div>
 
             {/* Card 3 - LEAD & Society Honors Infographic */}
-            <div className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-xl relative overflow-hidden group hover:border-school-yellow transition-all duration-300">
+            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl relative overflow-hidden group hover:border-school-yellow transition-all duration-300">
               <div className="absolute top-0 right-0 w-32 h-32 bg-school-yellow/5 rounded-bl-full group-hover:scale-110 transition-transform"></div>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-school-yellow/10 flex items-center justify-center text-school-yellow">
@@ -416,7 +645,7 @@ export default function Home() {
                       <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-school-red to-school-yellow rounded-full w-[85%]"></div>
                     </div>
                     <p className="text-[10.5px] text-gray-500 leading-normal font-light">
-                      KPS students stood out nationally in a pool of **2 Lakh participants**, with 8 of our students qualifying for the elite **2,000 national finalists**.
+                      KPS students stood out nationally in a pool of <span className="font-semibold text-school-black">2 Lakh participants</span>, with 8 of our students qualifying for the elite <span className="font-semibold text-school-black">2,000 national finalists</span>.
                     </p>
                   </div>
 
