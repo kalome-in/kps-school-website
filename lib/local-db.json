@@ -1,0 +1,353 @@
+{
+  "notices": [
+    {
+      "id": 1,
+      "title": "Half-Yearly Examination Timetable Released for Grades I to X",
+      "description": "The half-yearly examinations are scheduled to begin next month. Please check the detailed timetable attached below.",
+      "category": "Exam",
+      "priority": "High",
+      "fileUrl": "https://drive.google.com/file/d/1_exam_timetable_mock/view",
+      "date": "Oct 20, 2026",
+      "status": "Published",
+      "timestamp": "2026-10-20T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "School will remain closed on Oct 24th due to Diwali Festival",
+      "description": "On the auspicious occasion of Diwali, the school will remain closed. Normal classes will resume from Oct 25th.",
+      "category": "Holiday",
+      "priority": "Medium",
+      "fileUrl": "",
+      "date": "Oct 18, 2026",
+      "status": "Published",
+      "timestamp": "2026-10-18T09:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "Parent-Teacher Meeting scheduled for coming Saturday",
+      "description": "We request all parents to attend the parent-teacher meeting to discuss the academic progress of their wards.",
+      "category": "Circular",
+      "priority": "High",
+      "fileUrl": "",
+      "date": "Oct 15, 2026",
+      "status": "Published",
+      "timestamp": "2026-10-15T08:30:00.000Z"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1779961302982,
+      "title": "Primary school Ctehalc",
+      "department": "Maths",
+      "qualification": "Mmaldhds",
+      "experience": "2",
+      "salary": "Negotiable",
+      "lastDate": "2026-05-29",
+      "applyLink": "/careers",
+      "status": "Open"
+    },
+    {
+      "id": 1,
+      "title": "TGT Science Teacher",
+      "department": "Science",
+      "qualification": "B.Ed & B.Sc/M.Sc with 3+ years experience",
+      "experience": "3+ Years",
+      "salary": "Negotiable",
+      "lastDate": "2026-06-30",
+      "applyLink": "/careers",
+      "status": "Open"
+    },
+    {
+      "id": 2,
+      "title": "Primary English Teacher",
+      "department": "English",
+      "qualification": "B.Ed & B.A/M.A English with 2+ years experience",
+      "experience": "2+ Years",
+      "salary": "Negotiable",
+      "lastDate": "2026-06-30",
+      "applyLink": "/careers",
+      "status": "Open"
+    }
+  ],
+  "admissions": [],
+  "gallery": [],
+  "queries": [],
+  "careersApplications": [],
+  "settings": {
+    "instagramUrl": "https://instagram.com/updated_kps",
+    "facebookUrl": "https://facebook.com/updated_kps",
+    "youtubeUrl": "https://youtube.com/updated_kps",
+    "linkedinUrl": "https://linkedin.com/updated_kps",
+    "twitterUrl": "https://twitter.com/updated_kps",
+    "phone": "+91 99999 99999",
+    "email": "kps@updated.com",
+    "username": "admin",
+    "password": "kps1234"
+  },
+  "activities": [
+    {
+      "id": 1780036217076,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-29T06:30:17.076Z",
+      "type": "auth"
+    },
+    {
+      "id": 1780036211880,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-29T06:30:11.880Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779961367996,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T09:42:47.996Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779961328182,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-28T09:42:08.182Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779961302983,
+      "text": "Created job posting: \"Primary school Ctehalc\"",
+      "timestamp": "2026-05-28T09:41:42.983Z",
+      "type": "job"
+    },
+    {
+      "id": 1779961214760,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-28T09:40:14.760Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779961214606,
+      "text": "Deleted gallery item: \"Updated Album Event\"",
+      "timestamp": "2026-05-28T09:40:14.606Z",
+      "type": "gallery"
+    },
+    {
+      "id": 1779961214533,
+      "text": "Updated gallery item: \"Updated Album Event\"",
+      "timestamp": "2026-05-28T09:40:14.533Z",
+      "type": "gallery"
+    },
+    {
+      "id": 1779961214485,
+      "text": "Added image to gallery: \"Test Album Event\"",
+      "timestamp": "2026-05-28T09:40:14.485Z",
+      "type": "gallery"
+    },
+    {
+      "id": 1779961214473,
+      "text": "Deleted job posting: \"Updated Faculty Job\"",
+      "timestamp": "2026-05-28T09:40:14.473Z",
+      "type": "job"
+    },
+    {
+      "id": 1779961214467,
+      "text": "Updated job posting: \"Updated Faculty Job\"",
+      "timestamp": "2026-05-28T09:40:14.467Z",
+      "type": "job"
+    },
+    {
+      "id": 1779961214458,
+      "text": "Created job posting: \"Test Faculty Job\"",
+      "timestamp": "2026-05-28T09:40:14.458Z",
+      "type": "job"
+    },
+    {
+      "id": 1779961214450,
+      "text": "Deleted notice: \"Updated Test Board Notice\"",
+      "timestamp": "2026-05-28T09:40:14.450Z",
+      "type": "notice"
+    },
+    {
+      "id": 1779961214443,
+      "text": "Updated notice: \"Updated Test Board Notice\"",
+      "timestamp": "2026-05-28T09:40:14.443Z",
+      "type": "notice"
+    },
+    {
+      "id": 1779961214412,
+      "text": "Created notice: \"Test Board Notice\"",
+      "timestamp": "2026-05-28T09:40:14.412Z",
+      "type": "notice"
+    },
+    {
+      "id": 1779961214343,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T09:40:14.343Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779960880869,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-28T09:34:40.869Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779960880751,
+      "text": "Deleted gallery item: \"Updated Album Event\"",
+      "timestamp": "2026-05-28T09:34:40.751Z",
+      "type": "gallery"
+    },
+    {
+      "id": 1779960880716,
+      "text": "Updated gallery item: \"Updated Album Event\"",
+      "timestamp": "2026-05-28T09:34:40.716Z",
+      "type": "gallery"
+    },
+    {
+      "id": 1779960880629,
+      "text": "Added image to gallery: \"Test Album Event\"",
+      "timestamp": "2026-05-28T09:34:40.629Z",
+      "type": "gallery"
+    },
+    {
+      "id": 1779960880593,
+      "text": "Deleted job posting: \"Updated Faculty Job\"",
+      "timestamp": "2026-05-28T09:34:40.593Z",
+      "type": "job"
+    },
+    {
+      "id": 1779960880527,
+      "text": "Updated job posting: \"Updated Faculty Job\"",
+      "timestamp": "2026-05-28T09:34:40.527Z",
+      "type": "job"
+    },
+    {
+      "id": 1779960880513,
+      "text": "Created job posting: \"Test Faculty Job\"",
+      "timestamp": "2026-05-28T09:34:40.513Z",
+      "type": "job"
+    },
+    {
+      "id": 1779960880504,
+      "text": "Deleted notice: \"Updated Test Board Notice\"",
+      "timestamp": "2026-05-28T09:34:40.504Z",
+      "type": "notice"
+    },
+    {
+      "id": 1779960880494,
+      "text": "Updated notice: \"Updated Test Board Notice\"",
+      "timestamp": "2026-05-28T09:34:40.494Z",
+      "type": "notice"
+    },
+    {
+      "id": 1779960879294,
+      "text": "Created notice: \"Test Board Notice\"",
+      "timestamp": "2026-05-28T09:34:39.294Z",
+      "type": "notice"
+    },
+    {
+      "id": 1779960879108,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T09:34:39.108Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779960847106,
+      "text": "Failed login attempt for user: admin",
+      "timestamp": "2026-05-28T09:34:07.106Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953731777,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T07:35:31.777Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953717446,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-28T07:35:17.446Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953694522,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T07:34:54.522Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953692381,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-28T07:34:52.381Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953690885,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T07:34:50.885Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953689240,
+      "text": "Failed login attempt for user: admin",
+      "timestamp": "2026-05-28T07:34:49.240Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953684581,
+      "text": "Failed login attempt for user: admin",
+      "timestamp": "2026-05-28T07:34:44.581Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953683679,
+      "text": "Failed login attempt for user: admin",
+      "timestamp": "2026-05-28T07:34:43.679Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953675935,
+      "text": "Failed login attempt for user: hola",
+      "timestamp": "2026-05-28T07:34:35.935Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953670359,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-28T07:34:30.359Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953668552,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T07:34:28.552Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953664157,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-28T07:34:24.157Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953662741,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T07:34:22.741Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953659686,
+      "text": "Administrator logged out.",
+      "timestamp": "2026-05-28T07:34:19.686Z",
+      "type": "auth"
+    },
+    {
+      "id": 1779953492202,
+      "text": "Successful login by user: admin",
+      "timestamp": "2026-05-28T07:31:32.202Z",
+      "type": "auth"
+    },
+    {
+      "id": 1,
+      "text": "Database initialized successfully.",
+      "timestamp": "2026-05-28T07:28:14.314Z",
+      "type": "settings"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Menu, X, Phone, Mail } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Logo } from '@/components/logo';
 
 const MENU_ITEMS = [
@@ -19,6 +19,28 @@ const MENU_ITEMS = [
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [contactSettings, setContactSettings] = useState({
+    phone: '+91 98484 59246 / 99894 09246',
+    email: 'kpskorutla@gmail.com'
+  });
+
+  useEffect(() => {
+    async function loadSettings() {
+      try {
+        const response = await fetch('/api/settings');
+        const json = await response.json();
+        if (json.status === 'success' && json.data) {
+          setContactSettings({
+            phone: json.data.phone || '+91 98484 59246 / 99894 09246',
+            email: json.data.email || 'kpskorutla@gmail.com'
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching settings for header:', error);
+      }
+    }
+    loadSettings();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
@@ -26,8 +48,8 @@ export function Header() {
       <div className="bg-school-black text-white py-2 px-4 shadow-sm border-b border-white/5">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center text-xs sm:text-sm font-medium">
           <div className="flex gap-4">
-            <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5 text-school-gray" /> +91 98484 59246 / 99894 09246</span>
-            <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-school-gray" /> kpskorutla@gmail.com</span>
+            <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5 text-school-gray" /> {contactSettings.phone}</span>
+            <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-school-gray" /> {contactSettings.email}</span>
           </div>
           <div className="hidden sm:block uppercase tracking-widest font-bold text-[10px] sm:text-xs">
             <span className="text-school-yellow">Empower.</span>{" "}

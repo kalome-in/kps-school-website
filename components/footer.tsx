@@ -1,8 +1,45 @@
+'use client';
+
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import { Logo } from '@/components/logo';
 
 export function Footer() {
+  const [settings, setSettings] = useState({
+    instagramUrl: '#',
+    facebookUrl: '#',
+    youtubeUrl: '#',
+    linkedinUrl: '#',
+    twitterUrl: '#',
+    phone: '+91 98484 59246, 99894 09246',
+    email: 'kpskorutla@gmail.com',
+  });
+
+  useEffect(() => {
+    async function loadSettings() {
+      try {
+        const response = await fetch('/api/settings');
+        const json = await response.json();
+        if (json.status === 'success' && json.data) {
+          setSettings(prev => ({
+            ...prev,
+            instagramUrl: json.data.instagramUrl || '#',
+            facebookUrl: json.data.facebookUrl || '#',
+            youtubeUrl: json.data.youtubeUrl || '#',
+            linkedinUrl: json.data.linkedinUrl || '#',
+            twitterUrl: json.data.twitterUrl || '#',
+            phone: json.data.phone || prev.phone,
+            email: json.data.email || prev.email,
+          }));
+        }
+      } catch (error) {
+        console.error('Error fetching settings for footer:', error);
+      }
+    }
+    loadSettings();
+  }, []);
+
   return (
     <footer className="bg-school-black text-white pt-16 pb-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,15 +62,31 @@ export function Footer() {
               Managed by Kalam Dreams Educational Society. Established in 2016, KPS builds a strong foundation for the leaders of tomorrow.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
-                <Instagram className="w-4 h-4" />
-              </a>
+              {settings.facebookUrl && settings.facebookUrl !== '#' && (
+                <a href={settings.facebookUrl} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
+                  <Facebook className="w-4 h-4" />
+                </a>
+              )}
+              {settings.twitterUrl && settings.twitterUrl !== '#' && (
+                <a href={settings.twitterUrl} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
+                  <Twitter className="w-4 h-4" />
+                </a>
+              )}
+              {settings.instagramUrl && settings.instagramUrl !== '#' && (
+                <a href={settings.instagramUrl} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
+                  <Instagram className="w-4 h-4" />
+                </a>
+              )}
+              {settings.linkedinUrl && settings.linkedinUrl !== '#' && (
+                <a href={settings.linkedinUrl} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              )}
+              {settings.youtubeUrl && settings.youtubeUrl !== '#' && (
+                <a href={settings.youtubeUrl} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-school-orange hover:text-white transition-colors border border-white/5">
+                  <Youtube className="w-4 h-4" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -77,11 +130,11 @@ export function Footer() {
               </li>
               <li className="flex gap-3 text-sm text-gray-400 items-center">
                 <Phone className="w-4 h-4 text-school-orange shrink-0" />
-                <span>+91 98484 59246, 99894 09246</span>
+                <span>{settings.phone}</span>
               </li>
               <li className="flex gap-3 text-sm text-gray-400 items-center">
                 <Mail className="w-4 h-4 text-school-orange shrink-0" />
-                <span>kpskorutla@gmail.com</span>
+                <span>{settings.email}</span>
               </li>
             </ul>
           </div>

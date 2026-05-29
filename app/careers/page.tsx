@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Briefcase, Send, CheckCircle2 } from 'lucide-react';
 
 export default function CareersPage() {
@@ -54,12 +54,39 @@ export default function CareersPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const openings = [
-    { title: 'TGT Science Teacher', req: 'B.Ed & B.Sc/M.Sc with 3+ years experience', type: 'Full-time' },
-    { title: 'Primary English Teacher', req: 'B.Ed & B.A/M.A English with 2+ years experience', type: 'Full-time' },
-    { title: 'Sports Coach (Basketball)', req: 'B.P.Ed with relevant coaching experience', type: 'Part-time' },
-    { title: 'Student Counselor', req: 'M.A Psychology with background in child counseling', type: 'Full-time' }
-  ];
+  const [openings, setOpenings] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function loadJobs() {
+      try {
+        const response = await fetch('/api/jobs');
+        if (!response.ok) throw new Error('Failed to fetch jobs');
+        const json = await response.json();
+        if (json.status === 'success' && Array.isArray(json.data) && json.data.length > 0) {
+          // Map CMS fields to the UI keys
+          const mappedJobs = json.data
+            .filter((j: any) => j.status === 'Open')
+            .map((j: any) => ({
+              title: j.title,
+              req: `${j.qualification}. Experience: ${j.experience}`,
+              type: j.department // use department as job type or similar
+            }));
+          setOpenings(mappedJobs);
+        } else {
+          // Fallback to defaults
+          setOpenings([
+            { title: 'TGT Science Teacher', req: 'B.Ed & B.Sc/M.Sc with 3+ years experience', type: 'Science' },
+            { title: 'Primary English Teacher', req: 'B.Ed & B.A/M.A English with 2+ years experience', type: 'English' },
+            { title: 'Sports Coach (Basketball)', req: 'B.P.Ed with relevant coaching experience', type: 'Sports' },
+            { title: 'Student Counselor', req: 'M.A Psychology with background in child counseling', type: 'Counseling' }
+          ]);
+        }
+      } catch (error) {
+        console.error('Error loading jobs:', error);
+      }
+    }
+    loadJobs();
+  }, []);
 
   return (
     <div className="w-full bg-white pb-24">

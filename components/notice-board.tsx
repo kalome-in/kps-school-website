@@ -38,7 +38,11 @@ export function NoticeBoard({ limit }: NoticeBoardProps) {
         const response = await fetch('/api/notices');
         if (!response.ok) throw new Error('Failed to fetch');
         const res = await response.json();
-        setNotices(res.data || []);
+        const mapped = (res.data || []).map((n: any) => ({
+          ...n,
+          tag: n.category || n.tag || 'Circular'
+        }));
+        setNotices(mapped);
       } catch (err) {
         console.error('Error loading notices:', err);
         setError(true);

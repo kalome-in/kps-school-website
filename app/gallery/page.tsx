@@ -28,6 +28,7 @@ import {
 } from '@/app/data/gallery-data';
 
 export default function GalleryPage() {
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>(GALLERY_ITEMS);
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [activeSubTag, setActiveSubTag] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -40,6 +41,22 @@ export default function GalleryPage() {
   const [selectedClipping, setSelectedClipping] = useState<MediaClipping | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
+  useEffect(() => {
+    async function loadGallery() {
+      try {
+        const response = await fetch('/api/gallery');
+        if (!response.ok) throw new Error('Failed to fetch gallery');
+        const json = await response.json();
+        if (json.status === 'success' && Array.isArray(json.data)) {
+          setGalleryItems(json.data);
+        }
+      } catch (error) {
+        console.error('Error loading dynamic gallery:', error);
+      }
+    }
+    loadGallery();
+  }, []);
+
   // Reset filters when primary category changes
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
@@ -50,7 +67,7 @@ export default function GalleryPage() {
 
   // Get items matching category
   const getCategoryItems = () => {
-    let items = GALLERY_ITEMS;
+    let items = galleryItems;
     if (activeCategory !== 'All') {
       items = items.filter(item => item.tags.includes(activeCategory));
     }

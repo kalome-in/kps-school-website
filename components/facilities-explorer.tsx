@@ -5,17 +5,10 @@ import Image from 'next/image';
 import { 
   BookOpen, 
   Trophy, 
-  Palette, 
   Shield, 
+  Smartphone,
   CheckCircle2, 
   ArrowRight,
-  Monitor,
-  Microscope,
-  Library,
-  Bus,
-  Activity,
-  Sparkles,
-  Flame,
   Award
 } from 'lucide-react';
 
@@ -41,126 +34,93 @@ interface Category {
 const CATEGORIES: Category[] = [
   {
     id: 'academics',
-    title: 'Academics & Technology',
+    title: 'Academics & Tech',
     icon: BookOpen,
     facilities: [
       {
-        title: 'Smart Classrooms',
-        desc: 'Air-conditioned digital learning studios equipped with 75-inch interactive flat panels, multimedia tools, and high-speed internet to make teaching visual, dynamic, and engaging.',
+        title: 'Multi-Modal TV Classrooms',
+        desc: 'Interactive visual learning classrooms integrated with high-definition digital TVs. Standard lessons are animated through 3D models and multi-sensory educational videos to maximize concept absorption.',
         image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Tech-Enabled Classrooms',
+        tag: 'Visual Learning',
         features: [
-          '75-inch Interactive Flat Panels',
-          'Air-Conditioned Environment',
-          'Ergonomic, Child-Safe Seating',
-          'Integrated LEAD School Digital Media'
+          'High-Definition Smart TV Displays',
+          'LEAD-curriculum Multi-Sensory Videos',
+          'Concept Visualizations & 3D Demos',
+          'Enhanced Student Focus & Retention'
         ],
-        stats: { value: '100%', label: 'Smart Enabled' }
+        stats: { value: '100%', label: 'TV Enabled' }
       },
       {
-        title: 'Science Laboratories',
-        desc: 'Advanced, fully equipped Physics, Chemistry, and Biology laboratories designed to support hands-on experimentation, analytical thinking, and scientific inquiry under expert safety supervision.',
-        image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Scientific Discovery',
+        title: 'CBT Tab Testing',
+        desc: 'Regular Computer-Based Tests (CBT) conducted via dedicated high-speed school tablets. Prepares students for the digital future with self-paced testing, adaptive quizzes, and immediate performance analytics.',
+        image: 'https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200&auto=format&fit=crop',
+        tag: 'Digital Assessment',
         features: [
-          'Separate Physics, Chemistry & Bio Zones',
-          'Individual Safety Workstations',
-          'Premium Equipment & Glassware',
-          'Safety Showers & Evacuation Kits'
+          'Dedicated High-Speed Tablets',
+          'Instant Scoring & Performance Analytics',
+          'Adaptive Topic-wise Question Banks',
+          'Interactive, Stress-free Testing'
         ],
-        stats: { value: '3', label: 'Specialized Labs' }
+        stats: { value: 'Individual', label: 'Tablet Testing' }
       },
       {
-        title: 'Digital Library & Research Hub',
-        desc: 'A sanctuary for readers containing thousands of physical volumes, encyclopedias, reference texts, along with high-speed digital research terminals for online academic journals.',
-        image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Knowledge Oasis',
+        title: 'Abacus & Penmanship Academy',
+        desc: 'Cognitive and artistic refinement studio. Focuses on mental mathematics speed using Abacus kits, alongside elegant handwriting, calligraphy, and Lucida cursive writing styles.',
+        image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1200&auto=format&fit=crop',
+        tag: 'Cognitive & Art',
         features: [
-          '5,000+ Physical Books & Journals',
-          'Digital Cataloging (OPAC) System',
-          'Dedicated E-Learning Computer Desks',
-          'Comfortable Collaborative Zones'
+          'Hands-on Abacus Mental Math Training',
+          'Calligraphy & Handwriting Practice',
+          'Lucida Cursive Styling Mastery',
+          'Fine Motor Skill Development'
         ],
-        stats: { value: '5,000+', label: 'Books & Resources' }
+        stats: { value: 'Weekly', label: 'Creative Classes' }
       }
     ]
   },
   {
     id: 'athletics',
-    title: 'Athletics & Wellness',
+    title: 'Athletics & Clubs',
     icon: Trophy,
     facilities: [
       {
-        title: 'Sports & Playgrounds',
-        desc: 'Vast sports grounds designed for physical fitness, outdoor activities, and coordination. Features professional-grade setups for cricket, football, basketball, and track.',
-        image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Competitive Sports',
-        features: [
-          'Dedicated Cricket Practice Nets',
-          'Full-Sized Basketball & Volleyball Courts',
-          'Expansive Outdoor Football Ground',
-          'Qualified Physical Education Instructors'
-        ],
-        stats: { value: '10+', label: 'Sports Programs' }
-      },
-      {
-        title: 'Yoga & Meditation Hall',
-        desc: 'A quiet, ventilated wellness hall dedicated to physical posture training, breathing techniques, and mental health practices to improve focus, agility, and cognitive function.',
+        title: 'Taekwondo & Karate Classes',
+        desc: 'Professional martial arts training zones designed to teach self-defense techniques, physical coordination, endurance, discipline, and building child self-confidence.',
         image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Holistic Health',
+        tag: 'Self-Defense',
         features: [
-          'Soft, Clean Yoga Mats Provided',
-          'Acoustic-Insulated Silent Space',
-          'Daily Guided Breathing Workouts',
-          'Certified Yoga & Mindfulness Coaches'
+          'Professional Padded Safety Sparring Zones',
+          'Certified Martial Arts Instructors',
+          'Belt Grading and Sparring Gear Sets',
+          'Physical Fitness & Coordination Drills'
         ],
-        stats: { value: 'Daily', label: 'Guided Sessions' }
-      }
-    ]
-  },
-  {
-    id: 'creative',
-    title: 'Creative & Culture',
-    icon: Palette,
-    facilities: [
-      {
-        title: 'Multi-Purpose Auditorium',
-        desc: 'A beautifully structured, acoustic-treated auditorium that serves as the center for student assemblies, theatrical acts, guest seminars, and major cultural festivals.',
-        image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Performing Arts Arena',
-        features: [
-          'High-Definition Projector & Screen',
-          'Acoustic Soundproofing & Audio Systems',
-          'Comfortable Multi-Tier Seating',
-          'Spacious Changing & Rehearsal Backstage'
-        ],
-        stats: { value: '400+', label: 'Seat Capacity' }
+        stats: { value: '2', label: 'Martial Arts' }
       },
       {
-        title: 'Karate & Activity Center',
-        desc: 'Specialized spaces equipped with martial arts training equipment to teach self-defense, physical coordination, confidence, and internal discipline.',
+        title: 'Yoga & Bhagavad Gita Classes',
+        desc: 'Nurturing spiritual growth, flexibility, and character building. Integrates calming Yoga postures (asanas) with the timeless ethical and moral values from the Bhagavad Gita.',
         image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Martial Arts & Dance',
+        tag: 'Mind & Spirit',
         features: [
-          'High-Impact Padded Safety Mats',
-          'Full-Wall Alignment Mirrors',
-          'Interactive Audio for Choreography',
-          'Belt Grading and Sparring Gear'
+          'Guided Postures & Meditation Practices',
+          'Bhagavad Gita Moral Discourse Hours',
+          'Calm, Acoustic-Insulated Spaces',
+          'Character-Building & Ethical Guidance'
         ],
-        stats: { value: '2', label: 'Activity Zones' }
+        stats: { value: 'Daily', label: 'Guided Focus' }
       },
       {
-        title: 'Abacus & Cognitive Center',
-        desc: 'A dedicated mental arithmetic and logic studio designed to sharpen mathematical speed, visual memory, and problem-solving through abacus kits and board games.',
-        image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Brain Development',
+        title: 'Chess Classes',
+        desc: 'Strategic logic and analytical training. Students learn chess tactics and strategic planning to build math proficiency, spatial reasoning, and critical thinking skills.',
+        image: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=1200&auto=format&fit=crop',
+        tag: 'Mental Strategy',
         features: [
-          'Authentic Abacus Slide Kits',
-          'Strategy Games (Chess & Checkers)',
-          'Logical Reasoning Puzzles',
-          'Individual Progress Mentoring'
+          'FIDE-Standard Tourney Chess Sets',
+          'Guided Opening & Middle-game Tactics',
+          'Weekly Intra-School Chess Matches',
+          'Spatial Reasoning & Cognitive Focus'
         ],
-        stats: { value: '100%', label: 'Cognitive Focus' }
+        stats: { value: 'Weekly', label: 'Chess Coaching' }
       }
     ]
   },
@@ -170,30 +130,63 @@ const CATEGORIES: Category[] = [
     icon: Shield,
     facilities: [
       {
-        title: 'Safe GPS Bus Fleet',
-        desc: 'A fleet of comfortable, highly secured school buses operating across all major routes of Korutla. Equipped with real-time GPS tracking, onboard CCTV, and emergency communication devices.',
-        image: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?q=80&w=1200&auto=format&fit=crop',
-        tag: 'Secure Commutes',
+        title: 'Dual Student Biometrics',
+        desc: 'High-security campus checkpoints featuring dual student biometric authentication. Integrates instant facial recognition and fingerprint scanning for absolute campus security.',
+        image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1200&auto=format&fit=crop',
+        tag: 'Biometric Security',
         features: [
-          'Live GPS Fleet Tracking System',
-          'Real-time Speed Limit Monitors',
-          'Onboard Safety Cameras & Attendants',
-          'Strict Route Timing Alerts for Parents'
+          'Instant Facial Biometric Verification',
+          'Fingerprint Biometric Log Terminals',
+          'Automated Gated Entry/Exit Scans',
+          'Restricted Perimeter Visitor Access'
         ],
-        stats: { value: '100%', label: 'GPS Connected' }
+        stats: { value: '100%', label: 'Secure Checkpoints' }
       },
       {
-        title: 'Gated Access & CCTV Grid',
-        desc: 'Our highest priority is children safety. The school security grid integrates restricted perimeter access, digital visitor registries, and active continuous monitoring.',
-        image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1200&auto=format&fit=crop',
-        tag: '24/7 Gated Security',
+        title: 'Safe GPS Bus Fleet',
+        desc: 'Comfortable, highly secured school transportation facility with GPS-enabled transit tracking. Reaches all major boarding routes across Korutla with onboard safety attendants.',
+        image: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?q=80&w=1200&auto=format&fit=crop',
+        tag: 'Transit Facility',
         features: [
-          'RFID Student Entry-Exit Scans',
-          'Gated Guard Posts with Visitor Logs',
-          'Continuous CCTV Monitoring Hub',
-          'Regular Safety Evacuation Audits'
+          'Real-time GPS Location Tracking',
+          'Onboard Safety Cameras & Attendants',
+          'Direct Route Alert Sync for Parents',
+          'Strict Speed Limit Monitoring'
         ],
-        stats: { value: '24/7', label: 'Active Guarding' }
+        stats: { value: '100%', label: 'GPS Connected' }
+      }
+    ]
+  },
+  {
+    id: 'digital',
+    title: 'Digital Connect',
+    icon: Smartphone,
+    facilities: [
+      {
+        title: 'WhatsApp Parent Sync',
+        desc: 'Direct, automated parent communication. Automatically sends instant WhatsApp notifications for student attendance logs (entry/exit times) and regular academic progress updates.',
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
+        tag: 'WhatsApp Alerts',
+        features: [
+          'Automated WhatsApp Attendance Alerts',
+          'Instant Absence Notifications to Parents',
+          'Periodic Academic Progress Reports',
+          'Direct Notifications & Notices Delivery'
+        ],
+        stats: { value: 'Real-time', label: 'WhatsApp Alerts' }
+      },
+      {
+        title: 'Student & Parent Apps',
+        desc: 'Unified, secure school mobile applications. Provides immediate mobile access to class schedules, lesson progress, homework logs, progress reports, and hassle-free fee payments.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
+        tag: 'Mobile App Portals',
+        features: [
+          'Dedicated Parent App for School Updates',
+          'Student App for Schedules & Homework',
+          'Safe and Secure Online Fee Payments',
+          'Direct Push Notifications for Notices'
+        ],
+        stats: { value: '2 Apps', label: 'Android & iOS' }
       }
     ]
   }
@@ -217,7 +210,7 @@ export function FacilitiesExplorer() {
   return (
     <div className="w-full">
       {/* Category Tabs */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full">
         {CATEGORIES.map((cat, index) => {
           const Icon = cat.icon;
           const isActive = index === activeCategoryIndex;
@@ -225,7 +218,7 @@ export function FacilitiesExplorer() {
             <button
               key={cat.id}
               onClick={() => handleCategoryChange(index)}
-              className={`flex items-center gap-3 p-4 rounded-xl border text-left transition-all duration-300 font-heading ${
+              className={`flex items-center gap-3 p-4 rounded-xl border text-left transition-all duration-300 font-heading cursor-pointer ${
                 isActive 
                   ? 'bg-school-black text-white border-school-black shadow-lg shadow-black/5 scale-[1.02]' 
                   : 'bg-white hover:bg-gray-50 text-gray-600 border-gray-100'
@@ -241,7 +234,7 @@ export function FacilitiesExplorer() {
       </div>
 
       {/* Explorer Panel */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      <div className="w-full mt-10">
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0">
           
           {/* Left: Facilities List & active details */}
@@ -263,9 +256,9 @@ export function FacilitiesExplorer() {
                     <button
                       key={fac.title}
                       onClick={() => setActiveFacilityIndex(idx)}
-                      className={`w-full flex items-center justify-between p-3.5 rounded-xl border text-left transition-all duration-200 ${
+                      className={`w-full flex items-center justify-between p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
                         isSelected 
-                          ? 'bg-white border-gray-200 shadow-sm text-school-black' 
+                          ? 'bg-white border-gray-200 shadow-sm text-school-black font-semibold' 
                           : 'border-transparent hover:bg-white hover:border-gray-100 text-gray-500 hover:text-gray-700'
                       }`}
                     >
@@ -313,7 +306,7 @@ export function FacilitiesExplorer() {
                 </span>
               </div>
               <div>
-                <span className="block text-xs text-gray-400 font-medium font-heading uppercase tracking-wider">Facility Audit</span>
+                <span className="block text-xs text-gray-400 font-medium font-heading uppercase tracking-wider">Facility Status</span>
                 <span className="block text-sm font-bold text-school-black">{activeFacility.stats.label}</span>
               </div>
             </div>
@@ -327,7 +320,7 @@ export function FacilitiesExplorer() {
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+              className="object-cover group-hover:scale-102 transition-transform duration-700 opacity-90"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-school-black/80 via-transparent to-school-black/30" />
